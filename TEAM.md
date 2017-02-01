@@ -10,7 +10,7 @@ Prefix the summary line with "Editorial: " if the change is just to fix formatti
 
 Prefix the summary line with "Meta: " for changes that do not directly affect the text of the standard, but instead the ecosystem around it, such as spec tooling or contributor documentation.
 
-For normative changes, ask for a [web-platform-tests](https://github.com/w3c/web-platform-tests) PR if testing is practical and not overly burdensome. Aim to merge both PRs at the same time. If one PR is approved but the other needs more work, add the `do not merge yet` label.
+For normative changes, ask for a [web-platform-tests](https://github.com/w3c/web-platform-tests) PR if testing is practical and not overly burdensome. Aim to merge both PRs at the same time. If one PR is approved but the other needs more work, add the `do not merge yet` label or, in web-platform-tests, the `status:needs-spec-decision` label.
 
 If a follow-up issue is filed in the web-platform-tests repository, add the appropriate label, e.g. `html` for the HTML Standard.
 
