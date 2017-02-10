@@ -10,6 +10,8 @@ Leave the **Allow edits from maintainers** option enabled to allow reviewers to 
 
 For normative changes, a corresponding [web-platform-tests](https://github.com/w3c/web-platform-tests) PR is highly appreciated. The author and reviewer can be different from the PR for the standard. If current behavior is unclear, writing tests first can help inform the discussion. Typically, both PRs will be merged at the same time.
 
+To be clear, a test PR with changes that conflict with the standard cannot land before the corresponding standard is changed.
+
 If testing is not practical, please explain why and if appropriate [file an issue](https://github.com/w3c/web-platform-tests/issues/new) to follow up later.
 
 ## Investigation
