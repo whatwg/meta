@@ -2,6 +2,10 @@
 
 These are the general guidelines for contributing to WHATWG standards.
 
+## Committing
+
+See [COMMITTING.md](COMMITTING.md) for further details.
+
 ## Pull requests
 
 Leave the **Allow edits from maintainers** option enabled to allow reviewers to fix trivial issues directly on your branch rather than needing to write review comments asking you make the edits.  For more details, see [Improving collaboration with forks](https://github.com/blog/2247-improving-collaboration-with-forks) in the GitHub Blog.
