@@ -1,3 +1,5 @@
+# WHATWG GitHub Labels
+
 There is currently no WHATWG-wide label policy, except for:
 
 * i18n-comment: used by the internationalization community to track issues they have raised.
