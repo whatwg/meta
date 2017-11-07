@@ -33,7 +33,7 @@ Title lines must not end in a period; they are titles, not sentences.
 
 Be sure to reference related GitHub issues within pull requests so they are appropriately cross-linked by GitHub. Use "closes" or "fixes" as appropriate to [automatically close issues](https://help.github.com/articles/closing-issues-using-keywords/).
 
-Avoid using Markdown-style code markup (i.e. backticks `` ) unless necessary for disambiguation.
+Avoid using Markdown-style code markup (i.e. backticks) unless necessary for disambiguation.
 
 ### Title prefixes
 
