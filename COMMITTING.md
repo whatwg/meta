@@ -5,11 +5,9 @@
 
 Each change needs to result in a single commit on the master branch, with no merge commits. The green squash and merge button is OK to use, but be sure to tidy up the commit message per the below guidelines. In particular, if you use the squash functionality, delete the parenthetical pull request number that GitHub adds.
 
-
 ## Commit messages
 
 _(Derived from the [erlang/otp wiki](https://github.com/erlang/otp/wiki/Writing-good-commit-messages).)_
-
 
 ### Purpose
 
@@ -22,7 +20,6 @@ Great commit messages serve at least three important purposes:
 As such, a commit message should be written which allows your future self to understand the intent of change without needing to delve into implementation details. This will not only benefit the maintainers, but also the reviewers.
 
 For more on this topic, see ["On commit messages"](http://who-t.blogspot.com/2009/12/on-commit-messages.html).
-
 
 ### Structure and conventions
 
@@ -38,7 +35,6 @@ Be sure to reference related GitHub issues within pull requests so they are appr
 
 Avoid using Markdown-style code markup _(i.e. backticks `` )_ unless necessary for disambiguation.
 
-
 ### Title prefixes
 
 Prefix the title line with _**"Editorial: "**_ if the change is just to fix formatting, typos, or is a refactoring that does not change how the standard is understood. Note that bug fixes or clarifications are not editorial, even if they only affect non-normative text.
@@ -46,7 +42,6 @@ Prefix the title line with _**"Editorial: "**_ if the change is just to fix form
 Prefix the title line with _**"Meta: "**_ for changes that do not directly affect the text of the standard, but instead the ecosystem around it, such as spec tooling or contributor documentation.
 
 In general, most commits do not have a prefix.
-
 
 ### Example
 
@@ -60,7 +55,6 @@ classic script. This has no effect by itself (and indeed looks kind of
 pointless as of this commit), but it sets the stage for making import()
 use this base URL (#2315).
 ```
-
 
 ## Branches
 
