@@ -10,11 +10,12 @@ In order to ease notifying folks with a common expertise or interest, the WHATWG
 
 At the time of writing, the following teams exist:
 
-* a11y
-* canvas
-* components
-* html-parser
-* i18n
-* loader
-* media
-* modules
+- **a11y** - Accessibility-related matters
+- **canvas** - The canvas element, and its APIs
+- **components** - Custom elements, shadow trees, and related technologies
+- **html-parser** -  The HTML Parser
+- **i18n** - Internationalization-related matters
+- **loader** - The loader concept
+- **media** - The HTML media elements and their API
+- **modules** - Javascript modules
+- **security** - Security-related matters
