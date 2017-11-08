@@ -7,7 +7,7 @@ Each change needs to result in a single commit on the master branch, with no mer
 
 ## Commit messages
 
-_(Derived from the [erlang/otp wiki](https://github.com/erlang/otp/wiki/Writing-good-commit-messages).)_
+(Derived from the [erlang/otp wiki](https://github.com/erlang/otp/wiki/Writing-good-commit-messages).)
 
 ### Purpose
 
