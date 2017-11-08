@@ -25,7 +25,7 @@ For more on this topic, see ["On commit messages"](http://who-t.blogspot.com/200
 
 Commit messages consist of a single title line, a blank line, and then a more detailed change description. The description (and preceding blank line) may be omitted for simple fixes.
 
-All lines should be at most 72 characters, to make them easier to view in GitHub and other tools. Some sources recommend restricting the title line to 50 characters, but we do not enforce this.
+All lines should be at most 72 characters, to make them easier to view in GitHub and other tools. Single "words" are an exception to this convention (i.e. URLs). Some sources recommend restricting the title line to 50 characters, but we do not enforce this.
 
 The title must be written in imperative mode, as if commanding someone. This means using verb conjugations such as "fix"/"add"/"change" instead of "fixed"/"added"/"changed" or "fixing"/"adding"/"changing". We are less consistent with the description, but often use present tense (i.e. "This change adds…").
 
