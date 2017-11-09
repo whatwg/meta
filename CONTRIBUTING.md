@@ -1,4 +1,4 @@
-# WHATWG contributor guidelines
+# Contributor Guidelines
 
 These are the general guidelines for contributing to WHATWG standards.
 

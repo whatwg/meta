@@ -1,4 +1,4 @@
-# WHATWG maintainer guidelines
+# Maintainer Guidelines
 
 These are the general guidelines for maintaining WHATWG standards. Mostly boring infrastructure stuff.
 
