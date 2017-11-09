@@ -1,4 +1,4 @@
-# GitHub labels
+# GitHub Labels
 
 There is currently no WHATWG-wide label policy, except for:
 

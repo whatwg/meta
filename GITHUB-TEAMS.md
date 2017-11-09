@@ -1,4 +1,4 @@
-# WHATWG GitHub teams
+# GitHub Teams
 
 In order to ease notifying folks with a common expertise or interest, the WHATWG uses GitHub teams. The WHATWG uses teams in the following manner:
 

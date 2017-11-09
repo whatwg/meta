@@ -1,4 +1,4 @@
-# WHATWG committer guidelines
+# Committer Guidelines
 
 
 ## General
