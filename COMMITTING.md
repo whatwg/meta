@@ -19,7 +19,7 @@ Great commit messages serve at least three important purposes:
 
 As such, you should write a commit message that will allow your future self to understand the intent of change without looking at the diff. This will not only benefit reviewers, but also other maintainers. Your commit message should express intent without delving into implementation details.
 
-For more on this topic, see ["On commit messages"](http://who-t.blogspot.com/2009/12/on-commit-messages.html).
+For more on this topic, see ["On commit messages"](https://who-t.blogspot.com/2009/12/on-commit-messages.html).
 
 ### Structure and conventions
 

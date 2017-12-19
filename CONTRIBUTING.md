@@ -8,11 +8,11 @@ See [COMMITTING.md](COMMITTING.md) for further details.
 
 ## Pull requests
 
-Leave the **Allow edits from maintainers** option enabled to allow reviewers to fix trivial issues directly on your branch rather than needing to write review comments asking you make the edits.  For more details, see [Improving collaboration with forks](https://github.com/blog/2247-improving-collaboration-with-forks) in the GitHub Blog.
+Leave the **Allow edits from maintainers** option enabled to allow reviewers to fix trivial issues directly on your branch rather than needing to write review comments asking you make the edits. For more details, see [Improving collaboration with forks](https://github.com/blog/2247-improving-collaboration-with-forks) in the GitHub Blog.
 
 ## Tests
 
-For normative changes, a corresponding [web-platform-tests](https://github.com/w3c/web-platform-tests) PR is highly appreciated. The author and reviewer can be different from the PR for the standard. If current behavior is unclear, writing tests first can help inform the discussion. Typically, both PRs will be merged at the same time.
+For normative changes, a corresponding [web-platform-tests](https://github.com/w3c/web-platform-tests) pull request (PR) is needed. The author and reviewer can be different from the PR for the standard. If current behavior is unclear, writing tests first can help inform the discussion. Typically, both PRs will be merged at the same time.
 
 To be clear, a test PR with changes that conflict with the standard cannot land before the corresponding standard is changed.
 
@@ -20,7 +20,7 @@ If testing is not practical, please explain why and if appropriate [file an issu
 
 ## Investigation
 
-Often in the course of discussing a potential change, spec bug, or browser bug, it's useful to investigate the behavior in question in a variety of rendering engines and provide data back to the discussion. The best way to do this is to host a small test case and report the results in various engines.
+Often in the course of discussing a potential change, issue with a standard, or browser bug, it's useful to investigate the behavior in question in a variety of rendering engines and provide data back to the discussion. The best way to do this is to host a small test case and report the results in various engines.
 
 For simple cases (not involving multiple files), sites like [Live DOM Viewer](https://software.hixie.ch/utilities/js/live-dom-viewer/) or [JSBin](https://jsbin.com/) are recommended. For cases involving multiple files, you'll likely need to use your own hosting, for example using [GitHub Pages](https://pages.github.com/). Or you could skip straight to working on web-platform-tests, as discussed above.
 

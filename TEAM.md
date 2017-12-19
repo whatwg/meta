@@ -4,11 +4,18 @@ These are the general guidelines for maintaining WHATWG standards. Mostly boring
 
 ## Handling pull requests
 
-Rules for title/message must be satisfied before pull request is reviewed. See [COMMITTING.md](COMMITTING.md) for further details.
+Rules for title/message must be satisfied before pull request (PR) is reviewed. See [COMMITTING.md](COMMITTING.md) for further details.
 
 For normative changes, ask for a [web-platform-tests](https://github.com/w3c/web-platform-tests) PR if testing is practical and not overly burdensome. Aim to merge both PRs at the same time. If one PR is approved but the other needs more work, add the `do not merge yet` label or, in web-platform-tests, the `status:needs-spec-decision` label.
 
 If a follow-up issue is filed in the web-platform-tests repository, add the `type:untestable` or `type:missing-coverage` label, and any other appropriate labels, e.g. `html` for the HTML Standard.
+
+Furthermore, for changes affecting one or more implementations, ensure implementation bugs are filed:
+
+* [Chrome](https://crbug.com/new)
+* [Edge](https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/new/)
+* [Firefox](https://bugzilla.mozilla.org/enter_bug.cgi?product=Core)
+* [Safari](https://bugs.webkit.org/enter_bug.cgi?product=WebKit)
 
 ### Checking out pull requests from forks
 
