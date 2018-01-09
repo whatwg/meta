@@ -38,9 +38,11 @@ If there are additional interesting engine variations you are testing, for examp
 
 For examples of this kind of investigation in action, see [whatwg/html issue #775](https://github.com/whatwg/html/issues/775#issuecomment-190796607) or [whatwg/html issue #1087](https://github.com/whatwg/html/issues/1087#issue-150128324).
 
-## Principles
+## Further principles and guidelines
 
-For any changes please take into account the following sets of principles:
+For any changes please take into account the following principles and guidelines:
 
 * [HTML Design Principles](https://www.w3.org/TR/html-design-principles/) (note that these are applicable outside of HTML too and you are expected to treat them as such)
 * [Client-side API Design Principles](https://w3ctag.github.io/design-principles/)
+* [WHATWG Working Mode](https://whatwg.org/working-mode)
+* [WHATWG FAQ](https://whatwg.org/faq), in particular [Is there a process for removing bad ideas from a standard?](https://whatwg.org/faq#removing-bad-ideas) and [How should I go about proposing new features to WHATWG standards?](https://whatwg.org/faq#adding-new-features)
