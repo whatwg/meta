@@ -37,3 +37,12 @@ Attempt to make your test cases produce clearly-differentiable results regarding
 If there are additional interesting engine variations you are testing, for example older versions or engines not in the list, feel free to add more columns. If you can't test certain engines, leave a question mark in that cell, and others on the thread can help fill them in.
 
 For examples of this kind of investigation in action, see [whatwg/html issue #775](https://github.com/whatwg/html/issues/775#issuecomment-190796607) or [whatwg/html issue #1087](https://github.com/whatwg/html/issues/1087#issue-150128324).
+
+## Further principles and guidelines
+
+For any changes please take into account the following principles and guidelines:
+
+* [HTML Design Principles](https://www.w3.org/TR/html-design-principles/) (note that these are applicable outside of HTML too and you are expected to treat them as such)
+* [Client-side API Design Principles](https://w3ctag.github.io/design-principles/)
+* [WHATWG Working Mode](https://whatwg.org/working-mode)
+* [WHATWG FAQ](https://whatwg.org/faq), in particular [Is there a process for removing bad ideas from a standard?](https://whatwg.org/faq#removing-bad-ideas) and [How should I go about proposing new features to WHATWG standards?](https://whatwg.org/faq#adding-new-features)
