@@ -6,6 +6,12 @@ These are the general guidelines for contributing to WHATWG standards.
 
 See [COMMITTING.md](COMMITTING.md) for further details.
 
+## Getting started
+
+If this is your first time contributing to the WHATWG standards, check out the global list of [good first issues](https://github.com/search?q=is%3Aopen+label%3A%22good+first+issue%22+user%3Awhatwg&type=Issues) and find one you want to work on. You should comment in the thread to let others know you will be working on the issue. This is a great time to ask any questions that you may have.
+
+Contributions to older issues are always appreciated. If an issue hasn't been updated in a while, you should ask if the issue is still relevant before working on it. If someone else was previously working on an issue, and you want to work on it, it's polite to ask that person if you can work on the issue before taking it.
+
 ## Pull requests
 
 Leave the **Allow edits from maintainers** option enabled to allow reviewers to fix trivial issues directly on your branch rather than needing to write review comments asking you make the edits. For more details, see [Improving collaboration with forks](https://github.com/blog/2247-improving-collaboration-with-forks) in the GitHub Blog.
