@@ -6,7 +6,7 @@ These are the general guidelines for contributing to WHATWG standards.
 
 See [COMMITTING.md](COMMITTING.md) for further details.
 
-## Getting Started
+## Getting started
 
 If this is your first time contributing to the WHATWG standards, check out the global list of [good first issues](https://github.com/search?q=is%3Aopen+label%3A%22good+first+issue%22+user%3Awhatwg&type=Issues) and find one you want to work on. You should comment in the thread to let others know you will be working on the issue. This is a great time to ask any questions that you may have.
 
