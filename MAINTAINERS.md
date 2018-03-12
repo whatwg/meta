@@ -14,8 +14,8 @@ Furthermore, for changes affecting one or more implementations, ensure implement
 
 * [Chrome](https://crbug.com/new)
 * [Edge](https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/new/)
-* [Firefox](https://bugzilla.mozilla.org/enter_bug.cgi?product=Core)
-* [Safari](https://bugs.webkit.org/enter_bug.cgi?product=WebKit)
+* [Firefox](https://bugzilla.mozilla.org/enter_bug.cgi?product=Core&component=DOM)
+* [Safari](https://bugs.webkit.org/enter_bug.cgi?product=WebKit&component=HTML%20DOM)
 
 ### Checking out pull requests from forks
 
