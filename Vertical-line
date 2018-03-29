@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+	<title></title>
+    <style type="text/css">
+	#vertical-line{
+	width:  5px;
+	height: 500px;
+	background-colour: green;
+	}}
+	
+		</style>
+    </head>
+	<body>
+	<div id="vertical-line"></div>
+    </body>
+</html>
