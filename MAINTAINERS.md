@@ -86,3 +86,12 @@ git merge BRANCH_NAME --ff-only
 This checks out the PR's commits, rebases them on `master`, then fast-forwards `master` to include them.
 
 The `git push --force` line here ensures that the original branch gets updated to sit on top of `master` as well. This ensures GitHub can automatically figure out that the commits were merged, and thus automatically close the pull request with a nice purple "merged" status. So at this point you can do a `git push origin master` to push the changes, and GitHub will close the PR and mark it as merged.
+
+## Review Drafts
+
+As per [Review Drafts](https://whatwg.org/workstream-policy#review-drafts) editors are expected to publish a Review Draft every six months. This is a manual process ([for now](https://github.com/whatwg/sg/issues/74)):
+
+1. Run `make review` and follow the instructions.
+2. Create a pull request for the new resource and get it reviewed.
+3. Land the pull request and open an issue on the standard's repository to announce the new Review Draft.
+4. After 45 days of inactivity on the issue, close it. If there is activity, contact the [SG](https://github.com/whatwg/sg).
