@@ -89,10 +89,11 @@ The `git push --force` line here ensures that the original branch gets updated t
 
 ## Review Drafts
 
-As per [Review Drafts](https://whatwg.org/workstream-policy#review-drafts), editors are expected to publish a Review Draft every six months. This is a manual process ([for now](https://github.com/whatwg/sg/issues/74)):
+As per the [Workstream Policy](https://whatwg.org/workstream-policy#review-drafts), editors are expected to publish a Review Draft every six months. This is a manual process ([for now](https://github.com/whatwg/sg/issues/74)):
 
 1. Run `make review` and follow the instructions.
-1. Commit the new document: `Meta: May 2018 Review Draft` (adjust month and year accordingly).
+1. Commit the new document. Use a commit message like `Meta: May 2018 Review Draft` (adjusting the month and year accordingly).
 1. Create a pull request for the new resource and get it reviewed.
-1. Land the pull request and open an issue on the standard's repository to announce the new Review Draft. (It will be published in a subfolder of `review-drafts/`.)
+1. Land the pull request. This will automatically publish the review draft in a subdirectory of `https://x.spec.whatwg.org/review-drafts/`.
+1. Open an issue on the standard's repository to announce the new Review Draft. Use an issue title like `[Review Draft Announcement] May 2018`; this is important for those filtering their notifications in their email client.
 1. After 45 days of inactivity on the issue, close it. If there is activity, contact the [SG](https://github.com/whatwg/sg).
