@@ -27,7 +27,7 @@ Other Make targets are also available:
 * `make deploy` will do a full "deploy" of the standard, including error checking, commit snapshot production, any extra build steps, into a local subdirectory.
 * `make local` will do a local build, without calling out to any web services. This requires having [Bikeshed](https://github.com/tabatkins/bikeshed) installed locally.
 
-Due to its large size, the HTML Standard is a special snowflake, and has its own build process, which you can read about in the [html-build repository](https://github.com/whatwg/html-build/blob/master/README.md).
+Due to its large size, the HTML Standard has its own build process, which you can read about in the [html-build repository](https://github.com/whatwg/html-build/blob/master/README.md).
 
 ## Tests
 
