@@ -9,4 +9,4 @@ There is currently no WHATWG-wide label policy, except for:
 * [anchor permanence](https://github.com/search?q=org%3Awhatwg+label%3A%22anchor+permanence%22): identifies issues opened by other standards organizations, under our [anchor permanence policy](https://whatwg.org/working-mode#anchors), indicating to an editor that a certain anchor is being referenced and should work forever.
 * [impacts documentation](https://github.com/search?q=org%3Awhatwg+label%3A%22impacts+documentation%22): used by documentation communities, such as MDN, to track changes to standards that the WHATWG community believes have an impact on documentation.
 
-Using these labels results in digest email to [www-international](https://lists.w3.org/Archives/Public/www-international/).
+Using the `i18n-` labels results in digest email to [www-international](https://lists.w3.org/Archives/Public/www-international/).
