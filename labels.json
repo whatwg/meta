@@ -1,0 +1,112 @@
+[
+  {
+    "name": "addition/proposal",
+    "description": "New features or enhancements",
+    "color": "d4c5f9"
+  },
+  {
+    "name": "anchor permanence",
+    "description": "Identifies issues opened by other standards organizations, under our [anchor permanence policy](https://whatwg.org/working-mode#anchors), indicating to an editor that a certain anchor is being referenced and should work forever",
+    "url_exclude_is_open": true
+  },
+  {
+    "name": "clarification",
+    "description": "Standard could be clearer",
+    "color": "fef2c0"
+  },
+  {
+     "name": "compat",
+     "description": "Standard is not web compatible",
+     "color": "bfd4f2"
+  },
+  {
+    "name": "do not merge yet",
+    "description": "Pull request must not be merged per rationale in comment",
+    "color": "e11d21"
+  },
+  {
+    "name": "i18n-comment",
+    "description": "Used by the internationalization community to track issues they have raised",
+    "color": "d4c5f9"
+  },
+  {
+    "name": "i18n-tracking",
+    "description": "Used by the internationalization community to track issues they are interested in or the WHATWG community thinks the internationalization community might be interested in",
+    "color": "d4c5f9"
+  },
+  {
+    "name": "i18n-alreq",
+    "description": "Used by the internationalization community to notify Arabic script experts of relevant issues",
+    "color": "d4c5f9"
+  },
+  {
+    "name": "i18n-clreq",
+    "description": "Used by the internationalization community to notify Chinese script experts of relevant issues",
+    "color": "d4c5f9"
+  },
+  {
+    "name": "i18n-hlreq",
+    "description": "Used by the internationalization community to notify Hebrew script experts of relevant issues",
+    "color": "d4c5f9"
+  },
+  {
+    "name": "i18n-ilreq",
+    "description": "Used by the internationalization community to notify Indic script experts of relevant issues",
+    "color": "d4c5f9"
+  },
+  {
+    "name": "i18n-jlreq",
+    "description": "Used by the internationalization community to notify Japanese script experts of relevant issues",
+    "color": "d4c5f9"
+  },
+  {
+    "name": "i18n-klreq",
+    "description": "Used by the internationalization community to notify Korean script experts of relevant issues",
+    "color": "d4c5f9"
+  },
+  {
+    "name": "impacts documentation",
+    "description": "Used by documentation communities, such as MDN, to track changes to standards that the WHATWG community believes have an impact on documentation",
+    "url_exclude_is_open": true
+  },
+  {
+    "name": "interop",
+    "description": "Implementations are not compatible",
+    "color": "c5def5"
+  },
+  {
+    "name": "needs concrete proposal",
+    "description": "Moving the issue forward requires someone to figure out a detailed plan",
+    "color": "1cddc7"
+  },
+  {
+    "name": "needs implementer interest",
+    "description": "Moving the issue forward requires implementers to express interest",
+    "color": "5319e7"
+  },
+  {
+    "name": "needs tests",
+    "description": "Moving the issue forward requires someone to write tests",
+    "color": "b60205"
+  },
+  {
+    "name": "removal/deprecation",
+    "description": "Removing or deprecating a feature",
+    "color": "eb6420"
+  },
+  {
+    "name": "security/privacy",
+    "description": "There are security or privacy implications",
+    "color": "0052cc"
+  },
+  {
+    "name": "topic: custom elements",
+    "description": "Relates to custom elements (as defined in DOM and HTML)",
+    "color": "009800"
+  },
+  {
+    "name": "topic: shadow",
+    "description": "Relates to shadow trees (as defined in DOM)",
+    "color": "009800"
+  }
+]

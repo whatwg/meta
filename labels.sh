@@ -29,11 +29,17 @@ for LABEL in "bug" "duplicate" "enhancement" "help%20wanted" "invalid" "question
 # Create labels (note that spaces are not encoded here)
 # (Does not include "good first issue" as it's a default.)
 for LABEL in "addition/proposal|d4c5f9" \
+             "anchor permanence" \
              "clarification|fef2c0" \
              "compat|bfd4f2" \
              "do not merge yet|e11d21" \
              "i18n-comment|d4c5f9" \
              "i18n-tracking|d4c5f9" \
+             "i18n-alreq|d4c5f9" \
+             "i18n-clreq|d4c5f9" \
+             "i18n-hlreq|d4c5f9" \
+             "i18n-jlreq|d4c5f9" \
+             "i18n-klreq|d4c5f9" \
              "interop|c5def5" \
              "needs concrete proposal|1cddc7" \
              "needs implementer interest|5319e7" \
