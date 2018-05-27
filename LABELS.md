@@ -7,6 +7,7 @@ There is currently no WHATWG-wide label policy, except for:
 * [clarification](https://github.com/search?q=org%3Awhatwg+label%3A%22clarification+is%3Aopen): Standard could be clearer
 * [compat](https://github.com/search?q=org%3Awhatwg+label%3A%22compat+is%3Aopen): Standard is not web compatible
 * [do not merge yet](https://github.com/search?q=org%3Awhatwg+label%3A%22do+not+merge+yet+is%3Aopen): Pull request must not be merged per rationale in comment
+* [good first issue](https://github.com/search?q=org%3Awhatwg+label%3A%22good+first+issue+is%3Aopen): Ideal for someone new to a WHATWG standard or software project
 * [i18n-comment](https://github.com/search?q=org%3Awhatwg+label%3A%22i18n-comment+is%3Aopen): Used by the internationalization community to track issues they have raised
 * [i18n-tracking](https://github.com/search?q=org%3Awhatwg+label%3A%22i18n-tracking+is%3Aopen): Used by the internationalization community to track issues they are interested in or the WHATWG community thinks the internationalization community might be interested in
 * [i18n-alreq](https://github.com/search?q=org%3Awhatwg+label%3A%22i18n-alreq+is%3Aopen): Used by the internationalization community to notify Arabic script experts of relevant issues

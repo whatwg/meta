@@ -25,6 +25,11 @@
     "color": "e11d21"
   },
   {
+    "name": "good first issue",
+    "description": "Ideal for someone new to a WHATWG standard or software project",
+    "color": "bfe5bf"
+  },
+  {
     "name": "i18n-comment",
     "description": "Used by the internationalization community to track issues they have raised",
     "color": "d4c5f9"
