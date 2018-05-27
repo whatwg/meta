@@ -15,9 +15,9 @@
     "color": "fef2c0"
   },
   {
-     "name": "compat",
-     "description": "Standard is not web compatible",
-     "color": "bfd4f2"
+    "name": "compat",
+    "description": "Standard is not web compatible",
+    "color": "bfd4f2"
   },
   {
     "name": "do not merge yet",
@@ -30,16 +30,6 @@
     "color": "bfe5bf"
   },
   {
-    "name": "i18n-comment",
-    "description": "Used by the internationalization community to track issues they have raised",
-    "color": "d4c5f9"
-  },
-  {
-    "name": "i18n-tracking",
-    "description": "Used by the internationalization community to track issues they are interested in or the WHATWG community thinks the internationalization community might be interested in",
-    "color": "d4c5f9"
-  },
-  {
     "name": "i18n-alreq",
     "description": "Used by the internationalization community to notify Arabic script experts of relevant issues",
     "color": "d4c5f9"
@@ -47,6 +37,11 @@
   {
     "name": "i18n-clreq",
     "description": "Used by the internationalization community to notify Chinese script experts of relevant issues",
+    "color": "d4c5f9"
+  },
+  {
+    "name": "i18n-comment",
+    "description": "Used by the internationalization community to track issues they have raised",
     "color": "d4c5f9"
   },
   {
@@ -67,6 +62,11 @@
   {
     "name": "i18n-klreq",
     "description": "Used by the internationalization community to notify Korean script experts of relevant issues",
+    "color": "d4c5f9"
+  },
+  {
+    "name": "i18n-tracking",
+    "description": "Used by the internationalization community to track issues they are interested in or the WHATWG community thinks the internationalization community might be interested in",
     "color": "d4c5f9"
   },
   {
