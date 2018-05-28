@@ -132,8 +132,8 @@ def main():
             adjust_repository_labels("whatwg", repository, args.token, labels_resource)
     else:
         print "Please invoke as one of:\n\n" + \
-              "./labels.py `--update`\n" + \
-              "./labels.py `--repository x/y --token token`\n" + \
-              "./labels.py `--all-whatwg-standards --token token`"
+              "./labels.py --update\n" + \
+              "./labels.py --repository <x/y> --token <token>\n" + \
+              "./labels.py --all-whatwg-standards --token <token>"
 
 main()
