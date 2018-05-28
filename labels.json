@@ -2,7 +2,7 @@
   {
     "name": "addition/proposal",
     "description": "New features or enhancements",
-    "color": "d4c5f9"
+    "color": "006b75"
   },
   {
     "name": "anchor permanence",
@@ -17,7 +17,7 @@
   },
   {
     "name": "compat",
-    "description": "Standard is not web compatible",
+    "description": "Standard is not web compatible or proprietary feature needs standardizing",
     "color": "bfd4f2"
   },
   {
@@ -78,7 +78,7 @@
   },
   {
     "name": "interop",
-    "description": "Implementations are not compatible",
+    "description": "Implementations are not interoperable with each other",
     "color": "c5def5"
   },
   {

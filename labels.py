@@ -32,7 +32,7 @@ def clean_labels(labels_resource):
 def create_labels_docs(labels):
     output = """# GitHub Labels
 
-There is currently no WHATWG-wide label policy, except for:
+These are labels used by all [WHATWG standards](https://spec.whatwg.org/):
 
 """
     for label in labels:
