@@ -5,8 +5,25 @@ import argparse, collections, json, re, urllib, urllib2
 def get_labels(labels_resource):
     return json.loads(open(labels_resource, "r").read(), object_pairs_hook=collections.OrderedDict)
 
+def remove_markdown_links(input):
+    return re.sub(r"\[(.+)\]\(.+\)", r"\1", input)
+
+def lint_labels(labels):
+    for label in labels:
+        if "name" not in label:
+            print "A label needs a name"
+        elif "description" not in label:
+            print "A label (" + label["name"] + ") needs a description"
+        elif len(remove_markdown_links(label["description"])) > 100:
+            print "GitHub will likely complain about the length of your label (" + label["name"] + ")'s description."
+        elif "color" not in label:
+            print "A label (" + label["name"] + ") needs a color"
+        elif "url_exclude_is_open" in label and label["url_exclude_is_open"] != True:
+            print "A label (" + label["name"] + ")'s url_exclude_is_open needs to be set to true if present."
+
 def clean_labels(labels_resource):
     labels = get_labels(labels_resource)
+    lint_labels(labels)
     labels.sort(key=lambda x: x["name"])
     handle = open(labels_resource, "w")
     handle.write(json.dumps(labels, indent=2, separators=(',', ': ')))
@@ -72,9 +89,9 @@ def adjust_repository_labels(organization, repository, token, labels_resource):
 
     # Update and add labels
     labels = get_labels(labels_resource)
+    lint_labels(labels)
     for label in labels:
-        # Remove Markdown hyperlinks from the description
-        label["description"] = re.sub(r"\[(.+)\]\(.+\)", r"\1", label["description"])
+        label["description"] = remove_markdown_links(label["description"])
         if "url_exclude_is_open" in label:
             del label["url_exclude_is_open"]
         try:
