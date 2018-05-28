@@ -37,32 +37,38 @@ def fetch(token, url, method, body=None):
     request.add_header("Accept", b"application/vnd.github.symmetra-preview+json")
     return urllib2.urlopen(request)
 
-def label_name_url(organization, repository, label_name):
+def label_name_url(common_url, label_name):
     # Note: this uses quote() instead of quote_plus() as spaces need to become %20 here
-    return "https://api.github.com/repos/%s/%s/labels/%s" % (organization, repository, urllib.quote(label_name))
+    return common_url + "/" + urllib.quote(label_name)
 
-def delete_label(organization, repository, token, label_name):
+def error(type, label_name, exc):
+    print type + " label: " + label_name + "; error " + str(exc)
+
+def delete_label(common_url, token, label_name):
     try:
-        fetch(token, label_name_url(organization, repository, label_name), "DELETE")
-    except Exception as exc:
-        print "Deleting label: " + label_name + "; error: " + str(exc)
+        fetch(token, label_name_url(common_url, label_name), "DELETE")
+    except urllib2.HTTPError as exc:
+        if exc.code != 404:
+            error("Deleting", label_name, exc)
 
-def update_label(organization, repository, token, label):
+def update_label(common_url, token, label):
     # Note: this reraises the error so the caller can branch.
     body = json.dumps(label)
-    fetch(token, label_name_url(organization, repository, label["name"]), "PATCH", body)
+    fetch(token, label_name_url(common_url, label["name"]), "PATCH", body)
 
-def add_label(organization, repository, token, label):
+def add_label(common_url, token, label):
     body = json.dumps(label)
     try:
-        fetch(token, "https://api.github.com/repos/%s/%s/labels" % (organization, repository), "POST", body)
+        fetch(token, common_url, "POST", body)
     except Exception as exc:
-        print "Adding", label, exc
+        error("Adding", label_name, exc)
 
 def adjust_repository_labels(organization, repository, token, labels_resource):
-    # Delete labels
-    #for label_name in ("bug", "duplicate", "enhancement", "help wanted", "invalid", "question", "wontfix"):
-    #    delete_label(organization, repository, token, label_name)
+    common_url = "https://api.github.com/repos/%s/%s/labels" % (organization, repository)
+
+    # Delete default GitHub labels except for "good first issue"
+    for label_name in ("bug", "duplicate", "enhancement", "help wanted", "invalid", "question", "wontfix"):
+        delete_label(common_url, token, label_name)
 
     # Update and add labels
     labels = get_labels(labels_resource)
@@ -72,12 +78,12 @@ def adjust_repository_labels(organization, repository, token, labels_resource):
         if "url_exclude_is_open" in label:
             del label["url_exclude_is_open"]
         try:
-            update_label(organization, repository, token, label)
+            update_label(common_url, token, label)
         except urllib2.HTTPError as exc:
             if exc.code == 404:
-                add_label(organization, repository, token, label)
+                add_label(common_url, token, label)
             else:
-                print label["name"], exc
+                error("Updating", label_name, exc)
 
 def main():
     parser = argparse.ArgumentParser()
