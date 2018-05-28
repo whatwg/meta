@@ -6,7 +6,7 @@
   },
   {
     "name": "anchor permanence",
-    "description": "Identifies issues opened by other standards organizations, under our [anchor permanence policy](https://whatwg.org/working-mode#anchors), indicating to an editor that a certain anchor is being referenced and should work forever",
+    "description": "Identifies issues opened by other standards organizations, as per WHATWG's [anchor permanence policy](https://whatwg.org/working-mode#anchors)",
     "url_exclude_is_open": true
   },
   {
@@ -66,12 +66,12 @@
   },
   {
     "name": "i18n-tracking",
-    "description": "Used by the internationalization community to track issues they are interested in or the WHATWG community thinks the internationalization community might be interested in",
+    "description": "Used by the internationalization community to track issues they are interested in",
     "color": "d4c5f9"
   },
   {
     "name": "impacts documentation",
-    "description": "Used by documentation communities, such as MDN, to track changes to standards that the WHATWG community believes have an impact on documentation",
+    "description": "Used by documentation communities, such as MDN, to track changes that impact documentation",
     "url_exclude_is_open": true
   },
   {

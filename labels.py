@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-import argparse, collections, json, urllib, urllib2
+import argparse, collections, json, re, urllib, urllib2
 
 def get_labels(labels_resource):
     return json.loads(open(labels_resource, "r").read(), object_pairs_hook=collections.OrderedDict)
@@ -30,22 +30,54 @@ There is currently no WHATWG-wide label policy, except for:
     handle = open("LABELS.md", "w")
     handle.write(output)
 
-def fetch(url, method, token):
-    request = urllib2.Request(url)
+def fetch(token, url, method, body=None):
+    request = urllib2.Request(url, body)
     request.get_method = lambda: method
     request.add_header("Authorization", b"Basic " + (token + ":x-oauth-basic").encode("base64").replace("\n", ""))
+    request.add_header("Accept", b"application/vnd.github.symmetra-preview+json")
     return urllib2.urlopen(request)
 
-def delete_label(organization, repository, label, token):
+def label_name_url(organization, repository, label_name):
+    # Note: this uses quote() instead of quote_plus() as spaces need to become %20 here
+    return "https://api.github.com/repos/%s/%s/labels/%s" % (organization, repository, urllib.quote(label_name))
+
+def delete_label(organization, repository, token, label_name):
     try:
-        fetch("https://api.github.com/repos/%s/%s/labels/%s" % (organization, repository, urllib.quote_plus(label)), "DELETE", token)
+        fetch(token, label_name_url(organization, repository, label_name), "DELETE")
     except Exception as exc:
-        print exc
+        print "Deleting label: " + label_name + "; error: " + str(exc)
 
-def adjust_repository_labels(organization, repository, token):
-    print organization, repository, token
+def update_label(organization, repository, token, label):
+    # Note: this reraises the error so the caller can branch.
+    body = json.dumps(label)
+    fetch(token, label_name_url(organization, repository, label["name"]), "PATCH", body)
 
-    delete_label(organization, repository, "bug", token)
+def add_label(organization, repository, token, label):
+    body = json.dumps(label)
+    try:
+        fetch(token, "https://api.github.com/repos/%s/%s/labels" % (organization, repository), "POST", body)
+    except Exception as exc:
+        print "Adding", label, exc
+
+def adjust_repository_labels(organization, repository, token, labels_resource):
+    # Delete labels
+    #for label_name in ("bug", "duplicate", "enhancement", "help wanted", "invalid", "question", "wontfix"):
+    #    delete_label(organization, repository, token, label_name)
+
+    # Update and add labels
+    labels = get_labels(labels_resource)
+    for label in labels:
+        # Remove Markdown hyperlinks from the description
+        label["description"] = re.sub(r"\[(.+)\]\(.+\)", r"\1", label["description"])
+        if "url_exclude_is_open" in label:
+            del label["url_exclude_is_open"]
+        try:
+            update_label(organization, repository, token, label)
+        except urllib2.HTTPError as exc:
+            if exc.code == 404:
+                add_label(organization, repository, token, label)
+            else:
+                print label["name"], exc
 
 def main():
     parser = argparse.ArgumentParser()
@@ -61,7 +93,7 @@ def main():
         create_labels_docs(get_labels(labels_resource))
     elif args.repository and "/" in args.repository and args.token:
         [repository, organization] = args.repository.split("/")
-        adjust_repository_labels(repository, organization, args.token)
+        adjust_repository_labels(repository, organization, args.token, labels_resource)
     else:
         print "Please specify either `--update` or `--repository x/y --token token`"
 
