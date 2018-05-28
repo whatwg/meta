@@ -7,6 +7,7 @@
   {
     "name": "anchor permanence",
     "description": "Identifies issues opened by other standards organizations, as per WHATWG's [anchor permanence policy](https://whatwg.org/working-mode#anchors)",
+    "color": "ececec",
     "url_exclude_is_open": true
   },
   {
@@ -72,6 +73,7 @@
   {
     "name": "impacts documentation",
     "description": "Used by documentation communities, such as MDN, to track changes that impact documentation",
+    "color": "ececec",
     "url_exclude_is_open": true
   },
   {
