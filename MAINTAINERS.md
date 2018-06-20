@@ -99,4 +99,4 @@ As per the [Workstream Policy](https://whatwg.org/workstream-policy#review-draft
 
    Under the [WHATWG IPR Policy](https://whatwg.org/ipr-policy), Participants may, within 45 days after publication of a Review Draft, exclude certain Essential Patent Claims from the Review Draft Licensing Obligations. See the [IPR Policy](https://whatwg.org/ipr-policy) for details.
    ```
-1. Land the pull request. This will automatically publish the review draft in a subdirectory of `https://x.spec.whatwg.org/review-drafts/`.
+1. Land the pull request. This will automatically publish the review draft in a subdirectory of <code>https://<var>x</var>.spec.whatwg.org/review-drafts/</code>.
