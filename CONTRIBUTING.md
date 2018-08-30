@@ -16,6 +16,8 @@ Contributions to older issues are always appreciated. If an issue hasn't been up
 
 Leave the **Allow edits from maintainers** option enabled to allow reviewers to fix trivial issues directly on your branch rather than needing to write review comments asking you make the edits. For more details, see [Improving collaboration with forks](https://github.com/blog/2247-improving-collaboration-with-forks) in the GitHub Blog.
 
+After you have created a pull request, HTML and HTML diff output will be generated, and a bot will take care of linking those from your pull request comment (typically within several minutes). These are useful for review and implementing from the standard with the proposed change incorperated.
+
 ## Building
 
 All WHATWG standards, apart from HTML, have a `Makefile` in their repository to help with building them. You'll need `make` and [`curl`](https://curl.haxx.se/) installed at the minimum; ideally you'll also have a full Bash shell. These prerequisites should be present on most Linux and macOS systems already. For Windows, we recommend [Git Bash](https://gitforwindows.org/) and [Make for Windows](http://gnuwin32.sourceforge.net/packages/make.htm).
