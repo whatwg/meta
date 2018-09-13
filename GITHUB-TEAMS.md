@@ -13,6 +13,7 @@ At the time of writing, the following teams exist:
 - **a11y** - Accessibility-related matters
 - **canvas** - The canvas element, and its APIs
 - **components** - Custom elements, shadow trees, and related technologies
+- **documentation** - Documentation for features in WHATWG standards
 - **html-parser** -  The HTML Parser
 - **i18n** - Internationalization-related matters
 - **loader** - The loader concept
