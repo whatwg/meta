@@ -38,7 +38,7 @@ These are labels used by all [WHATWG standards](https://spec.whatwg.org/):
 
 """
     for label in labels:
-        url = "https://github.com/search?q=org%3Awhatwg+label%3A%22" + urllib.quote_plus(label["name"])
+        url = "https://github.com/search?q=org%3Awhatwg+label%3A%22" + urllib.quote_plus(label["name"]) + "%22"
         if not "url_exclude_is_open" in label:
             url += "+is%3Aopen"
         output += "* [" + label["name"] + "](" + url + "): " + label["description"]  + "\n"
