@@ -45,15 +45,14 @@ In general, most commits do not have a prefix.
 
 ### Example
 
-From [whatwg/html@54585](https://github.com/whatwg/html/commit/5458513792ab00d58e6c91ba48faaa611d034a2e):
-
 ```
-Editorial: move base URL from "module script" to "script"
+Editorial: Fix formatting and typo
 
-This propagates an appropriate base URL for all instances of creating a
-classic script. This has no effect by itself (and indeed looks kind of
-pointless as of this commit), but it sets the stage for making import()
-use this base URL (#2315).
+Fixes: #35, #38, #21
+
+This is descriptive text providing details further explaining the title above. There is no restriction to the line length of this commit summary.
+
+Do remember to double space for subsequent paragraphs within summary.
 ```
 
 ## Branches
