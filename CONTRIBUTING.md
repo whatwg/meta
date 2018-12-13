@@ -48,11 +48,11 @@ For simple cases (not involving multiple files), sites like [Live DOM Viewer](ht
 Attempt to make your test cases produce clearly-differentiable results regarding the different outcomes you're investigating. You can then report the results back to the issue thread using the following Markdown syntax as a starting point:
 
 ```markdown
-| Test case                               | EdgeHTML | Blink | Gecko | WebKit |
-|-----------------------------------------|----------|-------|-------|--------|
-| Test case description 1                 |          |       |       |        |
-| Test case description 2                 |          |       |       |        |
-| Test case description 3                 |          |       |       |        |
+| Test case                               | Blink | Gecko | WebKit |
+|-----------------------------------------|-------|-------|--------|
+| Test case description 1                 |       |       |        |
+| Test case description 2                 |       |       |        |
+| Test case description 3                 |       |       |        |
 ```
 
 If there are additional interesting engine variations you are testing, for example older versions or engines not in the list, feel free to add more columns. If you can't test certain engines, leave a question mark in that cell, and others on the thread can help fill them in.
