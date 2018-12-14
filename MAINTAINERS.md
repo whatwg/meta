@@ -16,6 +16,8 @@ Furthermore, for changes affecting one or more implementations, ensure implement
 * [Firefox](https://bugzilla.mozilla.org/enter_bug.cgi?product=Core&component=DOM)
 * [Safari](https://bugs.webkit.org/enter_bug.cgi?product=WebKit&component=HTML%20DOM)
 
+For new features, or substantial changes to existing features, please notify the documentation team. Use the `impacts documentation` label and copy the `@whatwg/documentation` team on the PR or issue. They will help make the appropriate changes on [MDN web docs](https://developer.mozilla.org/).
+
 ### Checking out pull requests from forks
 
 Pull requests from external contributors come from branches in their forks. You can check out those external branches in order to review and test the commits in those pull requests, and to be able to push changes to them on your own (e.g., fixes for typos)—rather than needing to write review comments asking the PR contributor to make the edits.
