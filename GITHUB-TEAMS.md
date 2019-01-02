@@ -15,6 +15,7 @@ At the time of writing, the following teams exist:
 - **components** - Custom elements, shadow trees, and related technologies
 - **documentation** - Documentation for features in WHATWG standards
 - **html-parser** -  The HTML Parser
+- **http** - HTTP-related matters
 - **i18n** - Internationalization-related matters
 - **loader** - The loader concept
 - **media** - The HTML media elements and their API
