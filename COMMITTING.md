@@ -48,7 +48,7 @@ In general, most commits do not have a prefix.
 ```
 Editorial: Fix formatting and typo
 
-Fixes: #35, #38, #21
+Fixes #35, fixes #38, fixes #21
 
 This is descriptive text providing details further explaining the title above. There is no restriction to the line length of this commit summary.
 
