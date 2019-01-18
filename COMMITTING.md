@@ -52,7 +52,7 @@ Fixes #35, fixes #38, fixes #21
 
 This is descriptive text providing details further explaining the title above. There is no restriction to the line length of this commit summary.
 
-Do remember to double space for subsequent paragraphs within summary.
+Do remember to insert a single blank line between multiple paragraphs within the commit summary.
 ```
 
 ## Branches
