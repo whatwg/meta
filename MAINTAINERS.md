@@ -92,8 +92,7 @@ The `git push --force` line here ensures that the original branch gets updated t
 
 As per the [Workstream Policy](https://whatwg.org/workstream-policy#review-drafts), editors are expected to publish a Review Draft every six months. This is a manual process ([for now](https://github.com/whatwg/sg/issues/74)):
 
-1. Run `make review` and follow the instructions.
-1. Commit the new document. Use a commit message like `Review Draft Publication: May 2018` (adjusting the month and year accordingly). This format (which translates into the pull request title) is important for those filtering their notifications in their email client.
+1. Run `make review` and review the shown diff. This will also create a branch with a new commit. Please do not adjust the commit message, the pull request title generated from it is important for those filtering their notifications in their email client.
 1. Create a pull request for the new resource and get it reviewed. The pull request body should be:
    ```markdown
    A Review Draft for this Workstream will be published shortly, by merging this pull request.
