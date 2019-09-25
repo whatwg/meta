@@ -1,5 +1,10 @@
 [
   {
+    "name": "accessibility",
+    "description": "Affects accessibility",
+    "color": "fbca04"
+  },
+  {
     "name": "addition/proposal",
     "description": "New features or enhancements",
     "color": "006b75"
