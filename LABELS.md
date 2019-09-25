@@ -4,6 +4,7 @@
 
 These are labels used by all [WHATWG standards](https://spec.whatwg.org/):
 
+* [accessibility](https://github.com/search?q=org%3Awhatwg+label%3A%22accessibility%22+is%3Aopen): Affects accessibility
 * [addition/proposal](https://github.com/search?q=org%3Awhatwg+label%3A%22addition%2Fproposal%22+is%3Aopen): New features or enhancements
 * [anchor permanence](https://github.com/search?q=org%3Awhatwg+label%3A%22anchor+permanence%22): Identifies issues opened by other standards organizations, as per WHATWG's [anchor permanence policy](https://whatwg.org/working-mode#anchors)
 * [clarification](https://github.com/search?q=org%3Awhatwg+label%3A%22clarification%22+is%3Aopen): Standard could be clearer
