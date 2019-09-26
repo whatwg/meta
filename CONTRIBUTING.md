@@ -6,7 +6,7 @@ These are the general guidelines for contributing to WHATWG standards.
 
 Please do file these, they are appreciated! Consider reading the [FAQ](https://whatwg.org/faq) and [Working Mode](https://whatwg.org/working-mode) if you are new to standardization.
 
-## Partipation agreement
+## Participation agreement
 
 Please ensure you, or your employer if you work in the field of web technologies, can sign the [Contributor and Workstream Participant Agreement](https://participate.whatwg.org/agreement).
 
