@@ -10,6 +10,7 @@ These are labels used by all [WHATWG standards](https://spec.whatwg.org/):
 * [clarification](https://github.com/search?q=org%3Awhatwg+label%3A%22clarification%22+is%3Aopen): Standard could be clearer
 * [compat](https://github.com/search?q=org%3Awhatwg+label%3A%22compat%22+is%3Aopen): Standard is not web compatible or proprietary feature needs standardizing
 * [do not merge yet](https://github.com/search?q=org%3Awhatwg+label%3A%22do+not+merge+yet%22+is%3Aopen): Pull request must not be merged per rationale in comment
+* [editorial](https://github.com/search?q=org%3Awhatwg+label%3A%22editorial%22+is%3Aopen): Changes that do not affect how the standard is understood.
 * [good first issue](https://github.com/search?q=org%3Awhatwg+label%3A%22good+first+issue%22+is%3Aopen): Ideal for someone new to a WHATWG standard or software project
 * [i18n-alreq](https://github.com/search?q=org%3Awhatwg+label%3A%22i18n-alreq%22+is%3Aopen): Used by the internationalization community to notify Arabic script experts of relevant issues
 * [i18n-clreq](https://github.com/search?q=org%3Awhatwg+label%3A%22i18n-clreq%22+is%3Aopen): Used by the internationalization community to notify Chinese script experts of relevant issues
@@ -21,6 +22,7 @@ These are labels used by all [WHATWG standards](https://spec.whatwg.org/):
 * [i18n-tracking](https://github.com/search?q=org%3Awhatwg+label%3A%22i18n-tracking%22+is%3Aopen): Used by the internationalization community to track issues they are interested in
 * [impacts documentation](https://github.com/search?q=org%3Awhatwg+label%3A%22impacts+documentation%22): Used by documentation communities, such as MDN, to track changes that impact documentation
 * [interop](https://github.com/search?q=org%3Awhatwg+label%3A%22interop%22+is%3Aopen): Implementations are not interoperable with each other
+* [meta](https://github.com/search?q=org%3Awhatwg+label%3A%22meta%22+is%3Aopen): Changes to the ecosystem around the standard, not its contents.
 * [needs concrete proposal](https://github.com/search?q=org%3Awhatwg+label%3A%22needs+concrete+proposal%22+is%3Aopen): Moving the issue forward requires someone to figure out a detailed plan
 * [needs implementer interest](https://github.com/search?q=org%3Awhatwg+label%3A%22needs+implementer+interest%22+is%3Aopen): Moving the issue forward requires implementers to express interest
 * [needs tests](https://github.com/search?q=org%3Awhatwg+label%3A%22needs+tests%22+is%3Aopen): Moving the issue forward requires someone to write tests

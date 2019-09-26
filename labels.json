@@ -31,6 +31,11 @@
     "color": "e11d21"
   },
   {
+    "name": "editorial",
+    "description": "Changes that do not affect how the standard is understood.",
+    "color": "c7def8"
+  },
+  {
     "name": "good first issue",
     "description": "Ideal for someone new to a WHATWG standard or software project",
     "color": "bfe5bf"
@@ -85,6 +90,11 @@
     "name": "interop",
     "description": "Implementations are not interoperable with each other",
     "color": "c5def5"
+  },
+  {
+    "name": "meta",
+    "description": "Changes to the ecosystem around the standard, not its contents.",
+    "color": "fcabe1"
   },
   {
     "name": "needs concrete proposal",
