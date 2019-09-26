@@ -2,17 +2,21 @@
 
 These are the general guidelines for contributing to WHATWG standards.
 
-## Committing
+## New issues
 
-See [COMMITTING.md](COMMITTING.md) for further details.
+Please do file these, they are appreciated! Consider reading the [FAQ](https://whatwg.org/faq) and [Working Mode](https://whatwg.org/working-mode) if you are new to standardization.
 
-## Getting started
+## Partipation agreement
 
 Please ensure you, or your employer if you work in the field of web technologies, can sign the [Contributor and Workstream Participant Agreement](https://participate.whatwg.org/agreement).
 
 If this is your first time contributing to the WHATWG standards, check out the global list of [good first issues](https://github.com/search?q=is%3Aopen+label%3A%22good+first+issue%22+user%3Awhatwg&type=Issues) and find one you want to work on. You should comment in the thread to let others know you will be working on the issue. This is a great time to ask any questions that you may have.
 
 Contributions to older issues are always appreciated. If an issue hasn't been updated in a while, you should ask if the issue is still relevant before working on it. If someone else was previously working on an issue, and you want to work on it, it's polite to ask that person if you can work on the issue before taking it.
+
+## Committing
+
+See [COMMITTING.md](COMMITTING.md) for further details.
 
 ## Pull requests
 
