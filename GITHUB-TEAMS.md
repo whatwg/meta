@@ -13,7 +13,9 @@ At the time of writing, the following teams exist:
 - **a11y** - Accessibility-related matters
 - **canvas** - The canvas element, and its APIs
 - **components** - Custom elements, shadow trees, and related technologies
+- **css** - Where WHATWG and CSS intersect
 - **documentation** - Documentation for features in WHATWG standards
+- **forms** - Folks interested in taking forms further
 - **html-parser** -  The HTML Parser
 - **http** - HTTP-related matters
 - **i18n** - Internationalization-related matters
