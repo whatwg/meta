@@ -23,6 +23,5 @@ At the time of writing, the following teams exist:
 - **media** - The HTML media elements and their API
 - **modules** - Javascript modules
 - **rendering** - The rendering section
-  - **fieldset** - Rendering of the fieldset element
 - **security** - Security-related matters
 - **sg** - Steering group
