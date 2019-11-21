@@ -51,11 +51,6 @@
     "color": "d4c5f9"
   },
   {
-    "name": "i18n-needs-resolution",
-    "description": "Internationalization community (only) uses to request a mutually agreed resolution",
-    "color": "f9c9ff"
-  },
-  {
     "name": "i18n-hlreq",
     "description": "Used by the internationalization community to notify Hebrew script experts of relevant issues",
     "color": "d4c5f9"
@@ -74,6 +69,11 @@
     "name": "i18n-klreq",
     "description": "Used by the internationalization community to notify Korean script experts of relevant issues",
     "color": "d4c5f9"
+  },
+  {
+    "name": "i18n-needs-resolution",
+    "description": "Internationalization community (only) uses to request a mutually agreed resolution",
+    "color": "f9c9ff"
   },
   {
     "name": "i18n-tracker",
