@@ -14,12 +14,12 @@ These are labels used by all [WHATWG standards](https://spec.whatwg.org/):
 * [good first issue](https://github.com/search?q=org%3Awhatwg+label%3A%22good+first+issue%22+is%3Aopen): Ideal for someone new to a WHATWG standard or software project
 * [i18n-alreq](https://github.com/search?q=org%3Awhatwg+label%3A%22i18n-alreq%22+is%3Aopen): Used by the internationalization community to notify Arabic script experts of relevant issues
 * [i18n-clreq](https://github.com/search?q=org%3Awhatwg+label%3A%22i18n-clreq%22+is%3Aopen): Used by the internationalization community to notify Chinese script experts of relevant issues
-* [i18n-comment](https://github.com/search?q=org%3Awhatwg+label%3A%22i18n-comment%22+is%3Aopen): Used by the internationalization community to track issues they have raised
 * [i18n-hlreq](https://github.com/search?q=org%3Awhatwg+label%3A%22i18n-hlreq%22+is%3Aopen): Used by the internationalization community to notify Hebrew script experts of relevant issues
 * [i18n-ilreq](https://github.com/search?q=org%3Awhatwg+label%3A%22i18n-ilreq%22+is%3Aopen): Used by the internationalization community to notify Indic script experts of relevant issues
 * [i18n-jlreq](https://github.com/search?q=org%3Awhatwg+label%3A%22i18n-jlreq%22+is%3Aopen): Used by the internationalization community to notify Japanese script experts of relevant issues
 * [i18n-klreq](https://github.com/search?q=org%3Awhatwg+label%3A%22i18n-klreq%22+is%3Aopen): Used by the internationalization community to notify Korean script experts of relevant issues
-* [i18n-tracking](https://github.com/search?q=org%3Awhatwg+label%3A%22i18n-tracking%22+is%3Aopen): Used by the internationalization community to track issues they are interested in
+* [i18n-needs-resolution](https://github.com/search?q=org%3Awhatwg+label%3A%22i18n-needs-resolution%22+is%3Aopen): Internationalization community (only) uses to request a mutually agreed resolution
+* [i18n-tracker](https://github.com/search?q=org%3Awhatwg+label%3A%22i18n-tracker%22+is%3Aopen): Can be used by anyone to attract the attention of the Internationalization community
 * [impacts documentation](https://github.com/search?q=org%3Awhatwg+label%3A%22impacts+documentation%22): Used by documentation communities, such as MDN, to track changes that impact documentation
 * [interop](https://github.com/search?q=org%3Awhatwg+label%3A%22interop%22+is%3Aopen): Implementations are not interoperable with each other
 * [meta](https://github.com/search?q=org%3Awhatwg+label%3A%22meta%22+is%3Aopen): Changes to the ecosystem around the standard, not its contents.
