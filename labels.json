@@ -52,7 +52,7 @@
   },
   {
     "name": "i18n-needs-resolution",
-    "description": "Only set/removed by the internationalization community. Requests a mutually agreed resolution for this issue",
+    "description": "Internationalization community (only) uses to request a mutually agreed resolution",
     "color": "f9c9ff"
   },
   {
@@ -77,7 +77,7 @@
   },
   {
     "name": "i18n-tracker",
-    "description": "Can be used by anyone to attract the attention of the Tnternationalization community to this issue",
+    "description": "Can be used by anyone to attract the attention of the Internationalization community",
     "color": "f9c9ff"
   },
   {
