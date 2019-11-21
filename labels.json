@@ -51,9 +51,9 @@
     "color": "d4c5f9"
   },
   {
-    "name": "i18n-comment",
-    "description": "Used by the internationalization community to track issues they have raised",
-    "color": "d4c5f9"
+    "name": "i18n-needs-resolution",
+    "description": "Only set/removed by the internationalization community. Requests a mutually agreed resolution for this issue.",
+    "color": "f9c9ff"
   },
   {
     "name": "i18n-hlreq",
@@ -76,9 +76,9 @@
     "color": "d4c5f9"
   },
   {
-    "name": "i18n-tracking",
-    "description": "Used by the internationalization community to track issues they are interested in",
-    "color": "d4c5f9"
+    "name": "i18n-tracker",
+    "description": "Can be used by anyone to attract the attention of the Tnternationalization community to this issue.",
+    "color": "f9c9ff"
   },
   {
     "name": "impacts documentation",
