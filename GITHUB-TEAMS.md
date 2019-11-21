@@ -15,6 +15,7 @@ At the time of writing, the following teams exist:
 - **components** - Custom elements, shadow trees, and related technologies
 - **css** - Where WHATWG and CSS intersect
 - **documentation** - Documentation for features in WHATWG standards
+- **dom** - For those interested in helping designing and maintaining the DOM Standard
 - **forms** - Folks interested in taking forms further
 - **html-parser** -  The HTML Parser
 - **http** - HTTP-related matters
