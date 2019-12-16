@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "dependencies": {
+    "@octokit/rest": "16.35.2",
+    "ajv": "6.10.2"
+  }
+}
