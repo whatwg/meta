@@ -10,19 +10,21 @@ In order to ease notifying folks with a common expertise or interest, the WHATWG
 
 At the time of writing, the following teams exist:
 
-- **a11y** - Accessibility-related matters
-- **canvas** - The canvas element, and its APIs
-- **components** - Custom elements, shadow trees, and related technologies
-- **css** - Where WHATWG and CSS intersect
-- **documentation** - Documentation for features in WHATWG standards
-- **dom** - For those interested in helping designing and maintaining the DOM Standard
-- **forms** - Folks interested in taking forms further
-- **html-parser** -  The HTML Parser
-- **http** - HTTP-related matters
-- **i18n** - Internationalization-related matters
-- **loader** - The loader concept
-- **media** - The HTML media elements and their API
-- **modules** - Javascript modules
-- **rendering** - The rendering section
-- **security** - Security-related matters
-- **sg** - Steering group
+- **a11y** — Accessibility-related matters
+- **canvas** — The canvas element, and its APIs
+- **components** — Custom elements, shadow trees, and related technologies
+- **cross-origin isolation** — Developing Cross-Origin-Opener-Policy (COOP) and Cross-Origin-Embedder-Policy (COEP) and friends
+- **css** — Where WHATWG and CSS intersect
+- **documentation** — Documentation for features in WHATWG standards
+- **dom** — For those interested in helping designing and maintaining the DOM Standard
+- **forms** — Folks interested in taking forms further
+- **html-parser** — The HTML Parser
+- **http** — HTTP-related matters
+- **i18n** — Internationalization-related matters
+- **loader** — The loader concept
+- **media** — The HTML media elements and their API
+- **modules** — Javascript modules
+- **rendering** — The rendering section
+- **security** — Security-related matters
+- **sg** — Steering group
+- **triage** — Folks with the Triage permission for all WHATWG repositories
