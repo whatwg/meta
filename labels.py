@@ -3,7 +3,7 @@
 import argparse, collections, json, re, urllib, urllib2
 
 def get_labels(labels_resource):
-    return json.loads(open(labels_resource, "r").read(), object_pairs_hook=collections.OrderedDict)
+    return json.load(open(labels_resource, "r"))
 
 def remove_markdown_links(input):
     return re.sub(r"\[(.+)\]\(.+\)", r"\1", input)
@@ -26,7 +26,7 @@ def clean_labels(labels_resource):
     lint_labels(labels)
     labels.sort(key=lambda x: x["name"])
     handle = open(labels_resource, "w")
-    handle.write(json.dumps(labels, indent=2, separators=(',', ': ')))
+    handle.write(json.dumps(labels, sort_keys=True, indent=2, separators=(',', ': ')))
     handle.write("\n")
 
 def create_labels_docs(labels):

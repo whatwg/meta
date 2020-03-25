@@ -1,134 +1,134 @@
 [
   {
-    "name": "accessibility",
+    "color": "fbca04",
     "description": "Affects accessibility",
-    "color": "fbca04"
+    "name": "accessibility"
   },
   {
-    "name": "addition/proposal",
+    "color": "006b75",
     "description": "New features or enhancements",
-    "color": "006b75"
+    "name": "addition/proposal"
   },
   {
-    "name": "anchor permanence",
+    "color": "ececec",
     "description": "Identifies issues opened by other standards organizations, as per WHATWG's [anchor permanence policy](https://whatwg.org/working-mode#anchors)",
-    "color": "ececec",
+    "name": "anchor permanence",
     "url_exclude_is_open": true
   },
   {
-    "name": "clarification",
+    "color": "fef2c0",
     "description": "Standard could be clearer",
-    "color": "fef2c0"
+    "name": "clarification"
   },
   {
-    "name": "compat",
+    "color": "bfd4f2",
     "description": "Standard is not web compatible or proprietary feature needs standardizing",
-    "color": "bfd4f2"
+    "name": "compat"
   },
   {
-    "name": "do not merge yet",
+    "color": "e11d21",
     "description": "Pull request must not be merged per rationale in comment",
-    "color": "e11d21"
+    "name": "do not merge yet"
   },
   {
-    "name": "editorial",
+    "color": "c7def8",
     "description": "Changes that do not affect how the standard is understood.",
-    "color": "c7def8"
+    "name": "editorial"
   },
   {
-    "name": "good first issue",
+    "color": "bfe5bf",
     "description": "Ideal for someone new to a WHATWG standard or software project",
-    "color": "bfe5bf"
+    "name": "good first issue"
   },
   {
-    "name": "i18n-alreq",
+    "color": "d4c5f9",
     "description": "Used by the internationalization community to notify Arabic script experts of relevant issues",
-    "color": "d4c5f9"
+    "name": "i18n-alreq"
   },
   {
-    "name": "i18n-clreq",
+    "color": "d4c5f9",
     "description": "Used by the internationalization community to notify Chinese script experts of relevant issues",
-    "color": "d4c5f9"
+    "name": "i18n-clreq"
   },
   {
-    "name": "i18n-hlreq",
+    "color": "d4c5f9",
     "description": "Used by the internationalization community to notify Hebrew script experts of relevant issues",
-    "color": "d4c5f9"
+    "name": "i18n-hlreq"
   },
   {
-    "name": "i18n-ilreq",
+    "color": "d4c5f9",
     "description": "Used by the internationalization community to notify Indic script experts of relevant issues",
-    "color": "d4c5f9"
+    "name": "i18n-ilreq"
   },
   {
-    "name": "i18n-jlreq",
+    "color": "d4c5f9",
     "description": "Used by the internationalization community to notify Japanese script experts of relevant issues",
-    "color": "d4c5f9"
+    "name": "i18n-jlreq"
   },
   {
-    "name": "i18n-klreq",
+    "color": "d4c5f9",
     "description": "Used by the internationalization community to notify Korean script experts of relevant issues",
-    "color": "d4c5f9"
+    "name": "i18n-klreq"
   },
   {
-    "name": "i18n-needs-resolution",
+    "color": "f9c9ff",
     "description": "Internationalization community (only) uses to request a mutually agreed resolution",
-    "color": "f9c9ff"
+    "name": "i18n-needs-resolution"
   },
   {
-    "name": "i18n-tracker",
+    "color": "f9c9ff",
     "description": "Can be used by anyone to attract the attention of the Internationalization community",
-    "color": "f9c9ff"
+    "name": "i18n-tracker"
   },
   {
-    "name": "impacts documentation",
-    "description": "Used by documentation communities, such as MDN, to track changes that impact documentation",
     "color": "ececec",
+    "description": "Used by documentation communities, such as MDN, to track changes that impact documentation",
+    "name": "impacts documentation",
     "url_exclude_is_open": true
   },
   {
-    "name": "interop",
+    "color": "c5def5",
     "description": "Implementations are not interoperable with each other",
-    "color": "c5def5"
+    "name": "interop"
   },
   {
-    "name": "meta",
+    "color": "fcabe1",
     "description": "Changes to the ecosystem around the standard, not its contents.",
-    "color": "fcabe1"
+    "name": "meta"
   },
   {
-    "name": "needs concrete proposal",
+    "color": "1cddc7",
     "description": "Moving the issue forward requires someone to figure out a detailed plan",
-    "color": "1cddc7"
+    "name": "needs concrete proposal"
   },
   {
-    "name": "needs implementer interest",
+    "color": "5319e7",
     "description": "Moving the issue forward requires implementers to express interest",
-    "color": "5319e7"
+    "name": "needs implementer interest"
   },
   {
-    "name": "needs tests",
+    "color": "b60205",
     "description": "Moving the issue forward requires someone to write tests",
-    "color": "b60205"
+    "name": "needs tests"
   },
   {
-    "name": "removal/deprecation",
+    "color": "eb6420",
     "description": "Removing or deprecating a feature",
-    "color": "eb6420"
+    "name": "removal/deprecation"
   },
   {
-    "name": "security/privacy",
+    "color": "0052cc",
     "description": "There are security or privacy implications",
-    "color": "0052cc"
+    "name": "security/privacy"
   },
   {
-    "name": "topic: custom elements",
+    "color": "009800",
     "description": "Relates to custom elements (as defined in DOM and HTML)",
-    "color": "009800"
+    "name": "topic: custom elements"
   },
   {
-    "name": "topic: shadow",
+    "color": "009800",
     "description": "Relates to shadow trees (as defined in DOM)",
-    "color": "009800"
+    "name": "topic: shadow"
   }
 ]
