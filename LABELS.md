@@ -18,8 +18,6 @@ These are labels used by all [WHATWG standards](https://spec.whatwg.org/):
 * [i18n-ilreq](https://github.com/search?q=org%3Awhatwg+label%3A%22i18n-ilreq%22+is%3Aopen): Used by the internationalization community to notify Indic script experts of relevant issues
 * [i18n-jlreq](https://github.com/search?q=org%3Awhatwg+label%3A%22i18n-jlreq%22+is%3Aopen): Used by the internationalization community to notify Japanese script experts of relevant issues
 * [i18n-klreq](https://github.com/search?q=org%3Awhatwg+label%3A%22i18n-klreq%22+is%3Aopen): Used by the internationalization community to notify Korean script experts of relevant issues
-* [i18n-needs-resolution](https://github.com/search?q=org%3Awhatwg+label%3A%22i18n-needs-resolution%22+is%3Aopen): Internationalization community (only) uses to request a mutually agreed resolution
-* [i18n-tracker](https://github.com/search?q=org%3Awhatwg+label%3A%22i18n-tracker%22+is%3Aopen): Can be used by anyone to attract the attention of the Internationalization community
 * [impacts documentation](https://github.com/search?q=org%3Awhatwg+label%3A%22impacts+documentation%22): Used by documentation communities, such as MDN, to track changes that impact documentation
 * [interop](https://github.com/search?q=org%3Awhatwg+label%3A%22interop%22+is%3Aopen): Implementations are not interoperable with each other
 * [meta](https://github.com/search?q=org%3Awhatwg+label%3A%22meta%22+is%3Aopen): Changes to the ecosystem around the standard, not its contents.
@@ -31,4 +29,13 @@ These are labels used by all [WHATWG standards](https://spec.whatwg.org/):
 * [topic: custom elements](https://github.com/search?q=org%3Awhatwg+label%3A%22topic%3A+custom+elements%22+is%3Aopen): Relates to custom elements (as defined in DOM and HTML)
 * [topic: shadow](https://github.com/search?q=org%3Awhatwg+label%3A%22topic%3A+shadow%22+is%3Aopen): Relates to shadow trees (as defined in DOM)
 
-Using the i18n-* labels results in digest email to [www-international](https://lists.w3.org/Archives/Public/www-international/).
+The following [W3C horizontal labels](https://w3c.github.io/issue-metadata.html#horizontal-reviews) can also be used:
+
+* [a11y-needs-resolution](https://github.com/search?q=org%3Awhatwg+label%3A%22a11y-needs-resolution%22+is%3Aopen): Issue the Accessibility Group has raised and looks for a response on.
+* [a11y-tracker](https://github.com/search?q=org%3Awhatwg+label%3A%22a11y-tracker%22+is%3Aopen): Group bringing to attention of a11y, or tracked by the a11y Group but not needing response.
+* [i18n-needs-resolution](https://github.com/search?q=org%3Awhatwg+label%3A%22i18n-needs-resolution%22+is%3Aopen): Issue the Internationalization Group has raised and looks for a response on.
+* [i18n-tracker](https://github.com/search?q=org%3Awhatwg+label%3A%22i18n-tracker%22+is%3Aopen): Group bringing to attention of Internationalization, or tracked by i18n but not needing response.
+* [privacy-needs-resolution](https://github.com/search?q=org%3Awhatwg+label%3A%22privacy-needs-resolution%22+is%3Aopen): Issue the Privacy Group has raised and looks for a response on.
+* [privacy-tracker](https://github.com/search?q=org%3Awhatwg+label%3A%22privacy-tracker%22+is%3Aopen): Group bringing to attention of Privacy, or tracked by the Privacy Group but not needing response.
+* [security-needs-resolution](https://github.com/search?q=org%3Awhatwg+label%3A%22security-needs-resolution%22+is%3Aopen): Issue the security Group has raised and looks for a response on.
+* [security-tracker](https://github.com/search?q=org%3Awhatwg+label%3A%22security-tracker%22+is%3Aopen): Group bringing to attention of security, or tracked by the security Group but not needing response.
