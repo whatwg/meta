@@ -1,5 +1,17 @@
 [
   {
+    "color": "ea7472",
+    "description": "Issue the Accessibility Group has raised and looks for a response on.",
+    "name": "a11y-needs-resolution",
+    "w3c": true
+  },
+  {
+    "color": "ea7472",
+    "description": "Group bringing to attention of a11y, or tracked by the a11y Group but not needing response.",
+    "name": "a11y-tracker",
+    "w3c": true
+  },
+  {
     "color": "fbca04",
     "description": "Affects accessibility",
     "name": "accessibility"
@@ -72,13 +84,15 @@
   },
   {
     "color": "f9c9ff",
-    "description": "Internationalization community (only) uses to request a mutually agreed resolution",
-    "name": "i18n-needs-resolution"
+    "description": "Issue the Internationalization Group has raised and looks for a response on.",
+    "name": "i18n-needs-resolution",
+    "w3c": true
   },
   {
     "color": "f9c9ff",
-    "description": "Can be used by anyone to attract the attention of the Internationalization community",
-    "name": "i18n-tracker"
+    "description": "Group bringing to attention of Internationalization, or tracked by i18n but not needing response.",
+    "name": "i18n-tracker",
+    "w3c": true
   },
   {
     "color": "ececec",
@@ -112,9 +126,33 @@
     "name": "needs tests"
   },
   {
+    "color": "d4af37",
+    "description": "Issue the Privacy Group has raised and looks for a response on.",
+    "name": "privacy-needs-resolution",
+    "w3c": true
+  },
+  {
+    "color": "d4af37",
+    "description": "Group bringing to attention of Privacy, or tracked by the Privacy Group but not needing response.",
+    "name": "privacy-tracker",
+    "w3c": true
+  },
+  {
     "color": "eb6420",
     "description": "Removing or deprecating a feature",
     "name": "removal/deprecation"
+  },
+  {
+    "color": "ffff00",
+    "description": "Issue the security Group has raised and looks for a response on.",
+    "name": "security-needs-resolution",
+    "w3c": true
+  },
+  {
+    "color": "ffff00",
+    "description": "Group bringing to attention of security, or tracked by the security Group but not needing response.",
+    "name": "security-tracker",
+    "w3c": true
   },
   {
     "color": "0052cc",
