@@ -67,27 +67,6 @@ You can then use it as
 checkout-pr estark37 example-fix
 ```
 
-### Merging pull requests into master
-
-Just use the normal green button in the pull-request page in the GitHub Web UI, but first ensure the commit message follows [the guidelines](https://github.com/erlang/otp/wiki/Writing-good-commit-messages).
-
-#### Merging to master from the command line
-
-Regardless of whether a pull request comes from a contributor (in which case the branch is from a different remote repository and you've already used the **Checking out pull requests from forks** steps above to fetch the branch) or from other editors or members of the WHATWG GitHub organization (in which case the branch is in the main repository), the steps for cleanly merging it to master are the same:
-
-```bash
-git checkout BRANCH_NAME
-git rebase master
-... build and review the spec ...
-git push --force
-git checkout master
-git merge BRANCH_NAME --ff-only
-```
-
-This checks out the PR's commits, rebases them on `master`, then fast-forwards `master` to include them.
-
-The `git push --force` line here ensures that the original branch gets updated to sit on top of `master` as well. This ensures GitHub can automatically figure out that the commits were merged, and thus automatically close the pull request with a nice purple "merged" status. So at this point you can do a `git push origin master` to push the changes, and GitHub will close the PR and mark it as merged.
-
 ## Review Drafts
 
 As per the [Workstream Policy](https://whatwg.org/workstream-policy#review-drafts), editors are expected to publish a Review Draft every six months. This is a manual process ([for now](https://github.com/whatwg/sg/issues/74)):
