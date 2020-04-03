@@ -18,6 +18,13 @@ Furthermore, for changes affecting one or more implementations, ensure implement
 
 For new features, or substantial changes to existing features, please notify the documentation team. Use the `impacts documentation` label and copy the `@whatwg/documentation` team on the PR or issue. They will help make the appropriate changes on [MDN web docs](https://developer.mozilla.org/).
 
+### Merging pull requests into master
+
+Use the green button on the PR page in the GitHub Web UI:
+
+* Rebase and merge: please ensure each individual commit makes sense on its own and contains the relevant information.
+* Squash and merge: remember to delete the PR reference the commit title and clean up the commit body.
+
 ### Checking out pull requests from forks
 
 Pull requests from external contributors come from branches in their forks. You can check out those external branches in order to review and test the commits in those pull requests, and to be able to push changes to them on your own (e.g., fixes for typos)—rather than needing to write review comments asking the PR contributor to make the edits.
@@ -66,27 +73,6 @@ You can then use it as
 ```bash
 checkout-pr estark37 example-fix
 ```
-
-### Merging pull requests into master
-
-Just use the normal green button in the pull-request page in the GitHub Web UI, but first ensure the commit message follows [the guidelines](https://github.com/erlang/otp/wiki/Writing-good-commit-messages).
-
-#### Merging to master from the command line
-
-Regardless of whether a pull request comes from a contributor (in which case the branch is from a different remote repository and you've already used the **Checking out pull requests from forks** steps above to fetch the branch) or from other editors or members of the WHATWG GitHub organization (in which case the branch is in the main repository), the steps for cleanly merging it to master are the same:
-
-```bash
-git checkout BRANCH_NAME
-git rebase master
-... build and review the spec ...
-git push --force
-git checkout master
-git merge BRANCH_NAME --ff-only
-```
-
-This checks out the PR's commits, rebases them on `master`, then fast-forwards `master` to include them.
-
-The `git push --force` line here ensures that the original branch gets updated to sit on top of `master` as well. This ensures GitHub can automatically figure out that the commits were merged, and thus automatically close the pull request with a nice purple "merged" status. So at this point you can do a `git push origin master` to push the changes, and GitHub will close the PR and mark it as merged.
 
 ## Review Drafts
 
