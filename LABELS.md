@@ -39,3 +39,5 @@ The following [W3C horizontal labels](https://w3c.github.io/issue-metadata.html#
 * [privacy-tracker](https://github.com/search?q=org%3Awhatwg+label%3A%22privacy-tracker%22+is%3Aopen): Group bringing to attention of Privacy, or tracked by the Privacy Group but not needing response.
 * [security-needs-resolution](https://github.com/search?q=org%3Awhatwg+label%3A%22security-needs-resolution%22+is%3Aopen): Issue the security Group has raised and looks for a response on.
 * [security-tracker](https://github.com/search?q=org%3Awhatwg+label%3A%22security-tracker%22+is%3Aopen): Group bringing to attention of security, or tracked by the security Group but not needing response.
+* [tag-needs-resolution](https://github.com/search?q=org%3Awhatwg+label%3A%22tag-needs-resolution%22+is%3Aopen): Issue the Technical Architecture Group has raised and looks for a response on.
+* [tag-tracker](https://github.com/search?q=org%3Awhatwg+label%3A%22tag-tracker%22+is%3Aopen): Group bringing to attention of the TAG, or tracked by the TAG but not needing response.

@@ -160,6 +160,18 @@
     "name": "security/privacy"
   },
   {
+    "color": "7fff00",
+    "description": "Issue the Technical Architecture Group has raised and looks for a response on.",
+    "name": "tag-needs-resolution",
+    "w3c": true
+  },
+  {
+    "color": "7fff00",
+    "description": "Group bringing to attention of the TAG, or tracked by the TAG but not needing response.",
+    "name": "tag-tracker",
+    "w3c": true
+  },
+  {
     "color": "009800",
     "description": "Relates to custom elements (as defined in DOM and HTML)",
     "name": "topic: custom elements"
