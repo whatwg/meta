@@ -27,4 +27,5 @@ At the time of writing, the following teams exist:
 - **rendering** — The rendering section
 - **security** — Security-related matters
 - **sg** — Steering group
+- **storage** — Buckets! (And other storage matters.)
 - **triage** — Folks with the Triage permission for all WHATWG repositories
