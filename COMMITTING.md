@@ -54,23 +54,3 @@ This is descriptive text providing details further explaining the title above. T
 
 Do remember to insert a single blank line between multiple paragraphs within the commit summary.
 ```
-
-## Branches
-
-Branches are transient and their names should be detailed enough to avoid confusion. Choose short and descriptive names. Using hyphens to separate words is encouraged.
-
-```bash
-# good
-$ git checkout -b modernize-template-header
-```
-
-```bash
-# bad: too vague and malformatted
-$ git checkout -b fix_paragraph-header
-```
-
-Identifiers from corresponding Github issues are great candidates for use in branch names. For example, when working on an issue:
-
-```bash
-$ git checkout -b issue-15
-```
