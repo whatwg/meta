@@ -6,7 +6,7 @@ import argparse, datetime, json, os, subprocess, requests
 def is_third_monday(d):
     return d.weekday() == 0 and 15 <= d.day <= 21
 
-def find_monday(d, days=1, limit=10):
+def find_third_monday(d, days=1, limit=10):
     i = 0
     while not is_third_monday(d):
         d = d + datetime.timedelta(days=days)
@@ -17,15 +17,14 @@ def find_monday(d, days=1, limit=10):
 
 def days_from_third_monday(d):
     if d.day < 15:
-        return find_monday(d)
+        return find_third_monday(d)
     elif d.day > 21:
-        return find_monday(d, -1)
+        return find_third_monday(d, -1)
     else:
-        forward = find_monday(d)
+        forward = find_third_monday(d)
         if not forward:
-            return find_monday(d, -1)
+            return find_third_monday(d, -1)
         return forward
-
 
 def find_shortnames(workstreams, month):
     shortnames = []
@@ -41,7 +40,6 @@ def find_shortnames(workstreams, month):
 def href_to_shortname(href):
     return href[len("https://"):href.index(".")]
 
-
 def maybe_create_prs(shortnames):
     for shortname in shortnames:
         os.chdir("../{}".format(shortname))
@@ -50,14 +48,12 @@ def maybe_create_prs(shortnames):
 
 def maybe_create_pr(shortname):
     subprocess.run(["git", "checkout", "master"], capture_output=True)
-    commits = subprocess.run(["git", "log", "--pretty=oneline", "--abbrev-commit", "--abbrev=8", "--max-count=40"], capture_output=True).stdout
-    for commit in commits.split(b"\n"):
-        # Remove the leading prefix (see --abbrev=8 above, which cannot be 0, plus a space)
-        commitTitle = commit[8+1:]
-        if commitTitle.startswith(b"Meta:"):
+    commits = subprocess.run(["git", "log", "--format=%s", "--max-count=40"], capture_output=True).stdout
+    for subject in commits.split(b"\n"):
+        if subject.startswith(b"Meta:"):
             continue
-        elif commitTitle.startswith(b"Review Draft Publication:"):
-            print("{} had no normative commits since the last publication".format(shortname))
+        elif subject.startswith(b"Review Draft Publication:"):
+            print("{} had no non-Meta commits since the last publication".format(shortname))
             return
         else:
             break
@@ -68,14 +64,13 @@ def maybe_create_pr(shortname):
     subprocess.run(["make", "review"])
 
     # This is straight from MAINTAINERS.md and needs to be kept in sync with that.
-    prBody = """A Review Draft for this Workstream will be published shortly, by merging this pull request.
+    pr_body = """A Review Draft for this Workstream will be published shortly, by merging this pull request.
 
 Under the [WHATWG IPR Policy](https://whatwg.org/ipr-policy), Participants may, within 45 days after publication of a Review Draft, exclude certain Essential Patent Claims from the Review Draft Licensing Obligations. See the [IPR Policy](https://whatwg.org/ipr-policy) for details."""
 
-    # TODO: should we expand prBody to include instructions for the maintainer with respect to the
+    # TODO: should we expand pr_body to include instructions for the maintainer with respect to the
     # subsequent comment and such?
-    subprocess.run(["gh", "pr", "create", "--title", "Review Draft Publication: {}".format(datetime.datetime.now().strftime("%B %G")), "--body", prBody])
-
+    #subprocess.run(["gh", "pr", "create", "--title", "Review Draft Publication: {}".format(datetime.datetime.now().strftime("%B %G")), "--body", pr_body])
 
 def main():
     parser = argparse.ArgumentParser()
@@ -89,7 +84,10 @@ def main():
         print("Right on, today is the day!")
 
     if not args.force:
-        if ideal_publication_diff > 3:
+        if ideal_publication_diff == None:
+            print("Publication is at least ten days away. Better wait. Use --force to ignore.")
+            exit(1)
+        elif ideal_publication_diff > 3:
             print("It's still more than 3 days before publication. Use --force to ignore.")
             exit(1)
         elif ideal_publication_diff < -3:
