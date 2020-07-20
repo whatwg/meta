@@ -70,7 +70,7 @@ Under the [WHATWG IPR Policy](https://whatwg.org/ipr-policy), Participants may, 
 
     # TODO: should we expand pr_body to include instructions for the maintainer with respect to the
     # subsequent comment and such?
-    #subprocess.run(["gh", "pr", "create", "--title", "Review Draft Publication: {}".format(datetime.datetime.now().strftime("%B %G")), "--body", pr_body])
+    subprocess.run(["gh", "pr", "create", "--title", "Review Draft Publication: {}".format(datetime.datetime.now().strftime("%B %G")), "--body", pr_body])
 
 def main():
     parser = argparse.ArgumentParser()
