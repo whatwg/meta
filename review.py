@@ -58,19 +58,21 @@ def maybe_create_pr(shortname):
         else:
             break
 
+    today = datetime.datetime.today()
+    nice_month = today.strftime("%B %Y")
+    path_month = today.strftime("%Y-%m")
+
     # We should consider merging
     # https://github.com/whatwg/whatwg.org/blob/master/resources.whatwg.org/build/review.sh and
     # https://github.com/whatwg/html/blob/master/review-draft.sh into this script.
     subprocess.run(["make", "review"])
 
     # This is straight from MAINTAINERS.md and needs to be kept in sync with that.
-    pr_body = """A Review Draft for this Workstream will be published shortly, by merging this pull request.
+    pr_body = """The [{} Review Draft](https://{}.spec.whatwg.org/review-drafts/{}) for this Workstream will be published shortly after merging this pull request.
 
-Under the [WHATWG IPR Policy](https://whatwg.org/ipr-policy), Participants may, within 45 days after publication of a Review Draft, exclude certain Essential Patent Claims from the Review Draft Licensing Obligations. See the [IPR Policy](https://whatwg.org/ipr-policy) for details."""
+Under the [WHATWG IPR Policy](https://whatwg.org/ipr-policy), Participants may, within 45 days after publication of a Review Draft, exclude certain Essential Patent Claims from the Review Draft Licensing Obligations. See the [IPR Policy](https://whatwg.org/ipr-policy) for details.""".format(nice_month, shortname, path_month)
 
-    # TODO: should we expand pr_body to include instructions for the maintainer with respect to the
-    # subsequent comment and such?
-    subprocess.run(["gh", "pr", "create", "--title", "Review Draft Publication: {}".format(datetime.datetime.now().strftime("%B %G")), "--body", pr_body])
+    subprocess.run(["gh", "pr", "create", "--title", "Review Draft Publication: {}".format(nice_month), "--body", pr_body])
 
 def main():
     parser = argparse.ArgumentParser()
