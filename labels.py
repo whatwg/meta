@@ -11,17 +11,17 @@ def remove_markdown_links(input):
 def lint_labels(labels):
     for label in labels:
         if "name" not in label:
-            print "A label needs a name"
+            print("A label needs a name")
         elif "description" not in label:
-            print "A label (" + label["name"] + ") needs a description"
+            print("A label (" + label["name"] + ") needs a description")
         elif len(remove_markdown_links(label["description"])) > 100:
-            print "GitHub will likely complain about the length of your label (" + label["name"] + ")'s description."
+            print("GitHub will likely complain about the length of your label (" + label["name"] + ")'s description.")
         elif "color" not in label:
-            print "A label (" + label["name"] + ") needs a color"
+            print("A label (" + label["name"] + ") needs a color")
         elif "url_exclude_is_open" in label and label["url_exclude_is_open"] != True:
-            print "A label (" + label["name"] + ")'s url_exclude_is_open needs to be set to true if present."
+            print("A label (" + label["name"] + ")'s url_exclude_is_open needs to be set to true if present.")
         elif "w3c" in label and label["w3c"] != True:
-            print "A label (" + label["name"] + ")'s w3c needs to be set to true if present."
+            print("A label (" + label["name"] + ")'s w3c needs to be set to true if present.")
 
 def import_w3c_labels(labels_resource):
     # Get W3C labels from their canonical URL
@@ -110,7 +110,7 @@ def label_name_url(common_url, label_name):
     return common_url + "/" + urllib.quote(label_name)
 
 def error(type, label_name, exc):
-    print type + " label: " + label_name + "; error " + str(exc)
+    print(type + " label: " + label_name + "; error " + str(exc))
 
 def delete_label(common_url, token, label_name):
     try:
@@ -180,13 +180,13 @@ def main():
                            "infra", "mimesniff", "notifications", "quirks", "storage", "streams",
                            "url", "xhr"):
             # Give a little bit of output as otherwise it's hard to tell what's going on
-            print "About to process", repository
+            print("About to process", repository)
             adjust_repository_labels("whatwg", repository, args.token, labels_resource)
     else:
-        print "Please invoke as one of:\n\n" + \
+        print("Please invoke as one of:\n\n" + \
               "./labels.py --import-w3c\n" + \
               "./labels.py --update\n" + \
               "./labels.py --repository <x/y> --token <token>\n" + \
-              "./labels.py --all-whatwg-standards --token <token>"
+              "./labels.py --all-whatwg-standards --token <token>")
 
 main()
