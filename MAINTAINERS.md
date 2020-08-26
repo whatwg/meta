@@ -76,14 +76,16 @@ checkout-pr estark37 example-fix
 
 ## Review Drafts
 
-As per the [Workstream Policy](https://whatwg.org/workstream-policy#review-drafts), editors are expected to publish a Review Draft every six months. This is a manual process ([for now](https://github.com/whatwg/sg/issues/74)):
+Per the [Workstream Policy](https://whatwg.org/workstream-policy#review-drafts), editors are expected to publish a Review Draft every six months.
 
-1. Run `make review` and review the shown diff. This will also create a branch with a new commit. Please do not adjust the commit message; the pull request title generated from it is important for those filtering their notifications in their email client.
-1. Create a pull request for the new resource and get it reviewed. The pull request body should be:
+To accomplish this the `review.py` script is used, this:
+
+1. Runs `make review` for each draft scheduled to be published that month as per [db.json](https://github.com/whatwg/sg/blob/master/db.json).
+1. Creates a pull request for the changes. The pull request body will be:
    ```markdown
-   A Review Draft for this Workstream will be published shortly, by merging this pull request.
+   A MONTH YEAR Review Draft (linked) for this Workstream will be published shortly after merging this pull request.
 
    Under the [WHATWG IPR Policy](https://whatwg.org/ipr-policy), Participants may, within 45 days after publication of a Review Draft, exclude certain Essential Patent Claims from the Review Draft Licensing Obligations. See the [IPR Policy](https://whatwg.org/ipr-policy) for details.
    ```
-1. Land the pull request. This will automatically publish the review draft in a subdirectory of <code>https://<var>x</var>.spec.whatwg.org/review-drafts/</code>.
-1. Copy the final URL and add it as a comment to the pull request.
+
+The editor or deputy editor will then review all is in order and merge it.
