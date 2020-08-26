@@ -78,7 +78,7 @@ checkout-pr estark37 example-fix
 
 Per the [Workstream Policy](https://whatwg.org/workstream-policy#review-drafts), editors are expected to publish a Review Draft every six months.
 
-In practice the `review.py` script is used, this:
+To accomplish this the `review.py` script is used, this:
 
 1. Runs `make review` for each draft scheduled to be published that month as per [db.json](https://github.com/whatwg/sg/blob/master/db.json).
 1. Creates a pull request for the changes. The pull request body will be:
@@ -88,6 +88,4 @@ In practice the `review.py` script is used, this:
    Under the [WHATWG IPR Policy](https://whatwg.org/ipr-policy), Participants may, within 45 days after publication of a Review Draft, exclude certain Essential Patent Claims from the Review Draft Licensing Obligations. See the [IPR Policy](https://whatwg.org/ipr-policy) for details.
    ```
 
-Someone will then review all is in order and merge it.
-
-Both of these tasks are not neccessarily performed by the editor of a draft as they are largely automated and do not require editor discretion.
+The editor or deputy editor will then review all is in order and merge it.
