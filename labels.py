@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 
-import argparse, collections, json, re, urllib, urllib2
+import argparse, base64, json, re, urllib, requests
+from review import fetch_json, find_shortnames
+
 
 def get_labels(labels_resource):
     return json.load(open(labels_resource, "r"))
@@ -25,7 +27,7 @@ def lint_labels(labels):
 
 def import_w3c_labels(labels_resource):
     # Get W3C labels from their canonical URL
-    w3c_labels = json.load(urllib2.urlopen("https://w3c.github.io/hr-labels.json"))
+    w3c_labels = fetch_json("https://w3c.github.io/hr-labels.json")
 
     # Create a name index for the W3C labels
     w3c_label_index = {}
@@ -92,44 +94,40 @@ These are labels used by all [WHATWG standards](https://spec.whatwg.org/):
     handle.write(output)
 
 def format_label(label):
-    url = "https://github.com/search?q=org%3Awhatwg+label%3A%22" + urllib.quote_plus(label["name"]) + "%22"
+    url = "https://github.com/search?q=org%3Awhatwg+label%3A%22" + urllib.parse.quote_plus(label["name"]) + "%22"
     if not "url_exclude_is_open" in label:
         url += "+is%3Aopen"
     return "* [{}]({}): {}\n".format(label["name"], url, label["description"])
 
 
 def fetch(token, url, method, body=None):
-    request = urllib2.Request(url, body)
-    request.get_method = lambda: method
-    request.add_header("Authorization", b"Basic " + (token + ":x-oauth-basic").encode("base64").replace("\n", ""))
-    request.add_header("Accept", b"application/vnd.github.symmetra-preview+json")
-    return urllib2.urlopen(request)
+    return requests.request(method, url, data=body, headers={
+        b"Authorization": b"Basic " + base64.b64encode(bytes(token, encoding="utf-8") + b":x-oauth-basic").replace(b"\n", b""),
+        b"Accept": b"application/vnd.github.v3+json"
+    })
 
 def label_name_url(common_url, label_name):
     # Note: this uses quote() instead of quote_plus() as spaces need to become %20 here
-    return common_url + "/" + urllib.quote(label_name)
+    return common_url + "/" + urllib.parse.quote(label_name)
 
-def error(type, label_name, exc):
-    print(type + " label: " + label_name + "; error " + str(exc))
+def error(type, label_name, status):
+    print(type + " label: " + label_name + "; status " + str(status))
 
 def delete_label(common_url, token, label_name):
-    try:
-        fetch(token, label_name_url(common_url, label_name), "DELETE")
-    except urllib2.HTTPError as exc:
-        if exc.code != 404:
-            error("Deleting", label_name, exc)
+    r = fetch(token, label_name_url(common_url, label_name), "DELETE")
+    if r.status_code != 200 and r.status_code != 404:
+        error("Deleting", label_name, r.status_code)
 
 def update_label(common_url, token, label):
-    # Note: this reraises the error so the caller can branch.
+    # Note: this returns the response so the caller can branch.
     body = json.dumps(label)
-    fetch(token, label_name_url(common_url, label["name"]), "PATCH", body)
+    return fetch(token, label_name_url(common_url, label["name"]), "PATCH", body)
 
 def add_label(common_url, token, label):
     body = json.dumps(label)
-    try:
-        fetch(token, common_url, "POST", body)
-    except Exception as exc:
-        error("Adding", label_name, exc)
+    r = fetch(token, common_url, "POST", body)
+    if r.status_code != 200:
+        error("Adding", label["name"], r.status_code)
 
 def adjust_repository_labels(organization, repository, token, labels_resource):
     common_url = "https://api.github.com/repos/%s/%s/labels" % (organization, repository)
@@ -145,13 +143,11 @@ def adjust_repository_labels(organization, repository, token, labels_resource):
         label["description"] = remove_markdown_links(label["description"])
         if "url_exclude_is_open" in label:
             del label["url_exclude_is_open"]
-        try:
-            update_label(common_url, token, label)
-        except urllib2.HTTPError as exc:
-            if exc.code == 404:
-                add_label(common_url, token, label)
-            else:
-                error("Updating", label_name, exc)
+        r = update_label(common_url, token, label)
+        if r.status_code == 404:
+            add_label(common_url, token, label)
+        elif r.status_code != 200:
+            error("Updating", label["name"], r.status_code)
 
 def main():
     parser = argparse.ArgumentParser()
@@ -176,9 +172,8 @@ def main():
         # It would be slightly neater to instead pull the repositories from a JSON resource so this
         # script would remain WHATWG-agnostic, but we don't have a good JSON resource for this so
         # far.
-        for repository in ("compat", "console", "dom", "encoding", "fetch", "fullscreen", "html",
-                           "infra", "mimesniff", "notifications", "quirks", "storage", "streams",
-                           "url", "xhr"):
+        db = fetch_json("https://github.com/whatwg/sg/raw/master/db.json")
+        for repository in find_shortnames(db["workstreams"]):
             # Give a little bit of output as otherwise it's hard to tell what's going on
             print("About to process", repository)
             adjust_repository_labels("whatwg", repository, args.token, labels_resource)

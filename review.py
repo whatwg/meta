@@ -3,6 +3,9 @@
 import argparse, datetime, json, os, subprocess, requests
 
 
+def fetch_json(url):
+    return json.loads(requests.get(url).text)
+
 def is_third_monday(d):
     return d.weekday() == 0 and 15 <= d.day <= 21
 
@@ -26,12 +29,12 @@ def days_from_third_monday(d):
             return find_third_monday(d, -1)
         return forward
 
-def find_shortnames(workstreams, month):
+def find_shortnames(workstreams, month=None):
     shortnames = []
 
     for workstream in workstreams:
         for standard in workstream["standards"]:
-            if month not in standard["review_draft_schedule"]:
+            if month and month not in standard["review_draft_schedule"]:
                 continue
             shortnames.append(href_to_shortname(standard["href"]))
 
@@ -94,7 +97,7 @@ def main():
             print("It's 3 days after publication, hopefully you already published. Use --force to ignore.")
             exit(1)
 
-    db = json.loads(requests.get("https://github.com/whatwg/sg/raw/master/db.json").text)
+    db = fetch_json("https://github.com/whatwg/sg/raw/master/db.json")
     shortnames = find_shortnames(db["workstreams"], today.month)
 
     if len(shortnames) == 0:
@@ -103,4 +106,5 @@ def main():
 
     maybe_create_prs(shortnames)
 
-main()
+if __name__ == "__main__":
+    main()
