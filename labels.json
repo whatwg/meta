@@ -59,6 +59,11 @@
   },
   {
     "color": "d4c5f9",
+    "description": "Used by the internationalization community to notify experts in languages of the Americas of relevant issues",
+    "name": "i18n-amlreq"
+  },
+  {
+    "color": "d4c5f9",
     "description": "Used by the internationalization community to notify Chinese script experts of relevant issues",
     "name": "i18n-clreq"
   },
@@ -81,6 +86,11 @@
     "color": "d4c5f9",
     "description": "Used by the internationalization community to notify Korean script experts of relevant issues",
     "name": "i18n-klreq"
+  },
+  {
+    "color": "d4c5f9",
+    "description": "Used by the internationalization community to notify traditional Mongolian script experts of relevant issues",
+    "name": "i18n-mlreq"
   },
   {
     "color": "f9c9ff",
