@@ -126,7 +126,7 @@ def update_label(common_url, token, label):
 def add_label(common_url, token, label):
     body = json.dumps(label)
     r = fetch(token, common_url, "POST", body)
-    if r.status_code != 200:
+    if r.status_code != 201:
         error("Adding", label["name"], r.status_code)
 
 def adjust_repository_labels(organization, repository, token, labels_resource):
