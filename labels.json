@@ -54,33 +54,43 @@
   },
   {
     "color": "d4c5f9",
-    "description": "Used by the internationalization community to notify Arabic script experts of relevant issues",
+    "description": "Notifies Arabic script experts of relevant issues",
     "name": "i18n-alreq"
   },
   {
     "color": "d4c5f9",
-    "description": "Used by the internationalization community to notify Chinese script experts of relevant issues",
+    "description": "Notifies experts in languages of the Americas of relevant issues",
+    "name": "i18n-amlreq"
+  },
+  {
+    "color": "d4c5f9",
+    "description": "Notifies Chinese script experts of relevant issues",
     "name": "i18n-clreq"
   },
   {
     "color": "d4c5f9",
-    "description": "Used by the internationalization community to notify Hebrew script experts of relevant issues",
+    "description": "Notifies Hebrew script experts of relevant issues",
     "name": "i18n-hlreq"
   },
   {
     "color": "d4c5f9",
-    "description": "Used by the internationalization community to notify Indic script experts of relevant issues",
+    "description": "Notifies Indic script experts of relevant issues",
     "name": "i18n-ilreq"
   },
   {
     "color": "d4c5f9",
-    "description": "Used by the internationalization community to notify Japanese script experts of relevant issues",
+    "description": "Notifies Japanese script experts of relevant issues",
     "name": "i18n-jlreq"
   },
   {
     "color": "d4c5f9",
-    "description": "Used by the internationalization community to notify Korean script experts of relevant issues",
+    "description": "Notifies Korean script experts of relevant issues",
     "name": "i18n-klreq"
+  },
+  {
+    "color": "d4c5f9",
+    "description": "Notifies traditional Mongolian script experts of relevant issues",
+    "name": "i18n-mlreq"
   },
   {
     "color": "f9c9ff",
