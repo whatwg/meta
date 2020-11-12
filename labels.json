@@ -54,6 +54,11 @@
   },
   {
     "color": "d4c5f9",
+    "description": "Notifies African languages experts of relevant issues",
+    "name": "i18n-afrlreq"
+  },
+  {
+    "color": "d4c5f9",
     "description": "Notifies Arabic script experts of relevant issues",
     "name": "i18n-alreq"
   },

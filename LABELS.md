@@ -12,6 +12,7 @@ These are labels used by all [WHATWG standards](https://spec.whatwg.org/):
 * [do not merge yet](https://github.com/search?q=org%3Awhatwg+label%3A%22do+not+merge+yet%22+is%3Aopen): Pull request must not be merged per rationale in comment
 * [editorial](https://github.com/search?q=org%3Awhatwg+label%3A%22editorial%22+is%3Aopen): Changes that do not affect how the standard is understood.
 * [good first issue](https://github.com/search?q=org%3Awhatwg+label%3A%22good+first+issue%22+is%3Aopen): Ideal for someone new to a WHATWG standard or software project
+* [i18n-afrlreq](https://github.com/search?q=org%3Awhatwg+label%3A%22i18n-afrlreq%22+is%3Aopen): Notifies African languages experts of relevant issues
 * [i18n-alreq](https://github.com/search?q=org%3Awhatwg+label%3A%22i18n-alreq%22+is%3Aopen): Notifies Arabic script experts of relevant issues
 * [i18n-amlreq](https://github.com/search?q=org%3Awhatwg+label%3A%22i18n-amlreq%22+is%3Aopen): Notifies experts in languages of the Americas of relevant issues
 * [i18n-clreq](https://github.com/search?q=org%3Awhatwg+label%3A%22i18n-clreq%22+is%3Aopen): Notifies Chinese script experts of relevant issues
