@@ -71,7 +71,7 @@ def maybe_create_pr(shortname):
     subprocess.run(["make", "review"])
 
     # This is straight from MAINTAINERS.md and needs to be kept in sync with that.
-    pr_body = """The [{} Review Draft](https://{}.spec.whatwg.org/review-drafts/{}) for this Workstream will be published shortly after merging this pull request.
+    pr_body = """The [{} Review Draft](https://{}.spec.whatwg.org/review-drafts/{}/) for this Workstream will be published shortly after merging this pull request.
 
 Under the [WHATWG IPR Policy](https://whatwg.org/ipr-policy), Participants may, within 45 days after publication of a Review Draft, exclude certain Essential Patent Claims from the Review Draft Licensing Obligations. See the [IPR Policy](https://whatwg.org/ipr-policy) for details.""".format(nice_month, shortname, path_month)
 
