@@ -172,7 +172,7 @@ def main():
         # It would be slightly neater to instead pull the repositories from a JSON resource so this
         # script would remain WHATWG-agnostic, but we don't have a good JSON resource for this so
         # far.
-        db = fetch_json("https://github.com/whatwg/sg/raw/master/db.json")
+        db = fetch_json("https://github.com/whatwg/sg/raw/main/db.json")
         for repository in find_shortnames(db["workstreams"]):
             # Give a little bit of output as otherwise it's hard to tell what's going on
             print("About to process", repository)

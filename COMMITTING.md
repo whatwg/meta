@@ -3,7 +3,7 @@
 
 ## General
 
-Each change needs to result in a single commit on the master branch, with no merge commits. The green squash and merge button is OK to use, but be sure to tidy up the commit message per the below guidelines. In particular, if you use the squash functionality, delete the parenthetical pull request number that GitHub adds.
+Each change needs to result in a single commit on the main branch, with no merge commits. The green squash and merge button is OK to use, but be sure to tidy up the commit message per the below guidelines. In particular, if you use the squash functionality, delete the parenthetical pull request number that GitHub adds.
 
 ## Commit messages
 
