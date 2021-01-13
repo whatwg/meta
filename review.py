@@ -50,7 +50,7 @@ def maybe_create_prs(shortnames):
         os.chdir(".")
 
 def maybe_create_pr(shortname):
-    subprocess.run(["git", "checkout", "master"], capture_output=True)
+    subprocess.run(["git", "checkout", "main"], capture_output=True)
     commits = subprocess.run(["git", "log", "--format=%s", "--max-count=40"], capture_output=True).stdout
     for subject in commits.split(b"\n"):
         if subject.startswith(b"Meta:"):
@@ -66,8 +66,8 @@ def maybe_create_pr(shortname):
     path_month = today.strftime("%Y-%m")
 
     # We should consider merging
-    # https://github.com/whatwg/whatwg.org/blob/master/resources.whatwg.org/build/review.sh and
-    # https://github.com/whatwg/html/blob/master/review-draft.sh into this script.
+    # https://github.com/whatwg/whatwg.org/blob/main/resources.whatwg.org/build/review.sh and
+    # https://github.com/whatwg/html/blob/main/review-draft.sh into this script.
     subprocess.run(["make", "review"])
 
     # This is straight from MAINTAINERS.md and needs to be kept in sync with that.
@@ -99,7 +99,7 @@ def main():
             print("It's 3 days after publication, hopefully you already published. Use --force to ignore.")
             exit(1)
 
-    db = fetch_json("https://github.com/whatwg/sg/raw/master/db.json")
+    db = fetch_json("https://github.com/whatwg/sg/raw/main/db.json")
     shortnames = find_shortnames(db["workstreams"], today.month)
 
     if len(shortnames) == 0:

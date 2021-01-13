@@ -18,7 +18,7 @@ Furthermore, for changes affecting one or more implementations, ensure implement
 
 For new features, or substantial changes to existing features, please notify the documentation team. Use the `impacts documentation` label and copy the `@whatwg/documentation` team on the PR or issue. They will help make the appropriate changes on [MDN web docs](https://developer.mozilla.org/).
 
-### Merging pull requests into master
+### Merging pull requests
 
 Use the green button on the PR page in the GitHub Web UI:
 
@@ -80,7 +80,7 @@ Per the [Workstream Policy](https://whatwg.org/workstream-policy#review-drafts),
 
 To accomplish this the `review.py` script is used, this:
 
-1. Runs `make review` for each draft scheduled to be published that month as per [db.json](https://github.com/whatwg/sg/blob/master/db.json).
+1. Runs `make review` for each draft scheduled to be published that month as per [db.json](https://github.com/whatwg/sg/blob/main/db.json).
 1. Creates a pull request for the changes. The pull request body will be:
    ```markdown
    A MONTH YEAR Review Draft (linked) for this Workstream will be published shortly after merging this pull request.
