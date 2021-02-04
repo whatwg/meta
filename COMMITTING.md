@@ -43,6 +43,8 @@ Prefix the title line with **"Meta: "** for changes that do not directly affect 
 
 In general, most commits do not have a prefix.
 
+(The prefix **"Review Draft Publication: "** is used for a Review Draft publication, a semi-automated process.)
+
 ### Example
 
 ```
