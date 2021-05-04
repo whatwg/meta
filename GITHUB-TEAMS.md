@@ -13,7 +13,7 @@ At the time of writing, the following teams exist:
 - **a11y** — Accessibility-related matters
 - **canvas** — The canvas element, and its APIs
 - **components** — Custom elements, shadow trees, and related technologies
-- **cross-origin isolation** — Developing Cross-Origin-Opener-Policy (COOP) and Cross-Origin-Embedder-Policy (COEP) and friends
+- **cross-origin-isolation** — Developing Cross-Origin-Opener-Policy (COOP) and Cross-Origin-Embedder-Policy (COEP) and friends
 - **css** — Where WHATWG and CSS intersect
 - **documentation** — Documentation for features in WHATWG standards
 - **dom** — For those interested in helping designing and maintaining the DOM Standard
