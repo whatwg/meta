@@ -19,6 +19,7 @@ At the time of writing, the following teams exist:
 - **dom** — For those interested in helping designing and maintaining the DOM Standard
 - **forms** — Folks interested in taking forms further
 - **html-parser** — The HTML Parser
+- **html-triage** — People attending the [HTML triage meeting](https://github.com/whatwg/html/issues/6371)
 - **http** — HTTP-related matters
 - **i18n** — Internationalization-related matters
 - **loader** — The loader concept
