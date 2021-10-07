@@ -5,6 +5,7 @@ When adding a new WHATWG standard, here is a checklist that needs to be consider
 1. Identify a shortname that is used for the spec.whatwg.org subdomain and repository (for tooling it is important that these are named identically).
    1. SG/admin: ensure the subdomain works and is configured: https://github.com/whatwg/misc-server.
    1. SG/admin: ensure there is a repository under the whatwg GitHub organization.
+   1. SG/admin: Give PR Preview access to the new repository.
 1. Create an SVG logo in the right shade of green (i.e., WHATWG green) and add it to https://github.com/whatwg/whatwg.org/tree/main/resources.whatwg.org.
 1. SG/admin: create a Twitter account.
    1. SG/admin: use https://github.com/whatwg/whattweetbot-keys to get the relevant keys.
