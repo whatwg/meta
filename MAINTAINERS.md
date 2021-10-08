@@ -18,7 +18,9 @@ Furthermore, for changes affecting one or more implementations, ensure implement
 
 For new features, or substantial changes to existing features, please notify the documentation team. Use the `impacts documentation` label and copy the `@whatwg/documentation` team on the PR or issue. They will help make the appropriate changes on [MDN web docs](https://developer.mozilla.org/).
 
-Every change made to HTML that impacts MDN web docs should have an associated issue in the [MDN web docs issue tracker](https://github.com/mdn/content/issues) or associated [MDN web docs pull request](https://github.com/mdn/content/pulls). So if there's on record in any documentation-impacting HTML issue or PR of an associated MDN web docs issue or PR — and nobody from the `@whatwg/documentation` has raised and MDN web docs issue or PR — then you should either [raise an MDN web docs issue](https://github.com/mdn/content/issues/new/choose) yourself, or create an MDN web docs PR.
+Every documentation-impacting change made to a WHATWG standard should have an associated issue in the [MDN web docs issue tracker](https://github.com/mdn/content/issues) or associated [MDN web docs pull request](https://github.com/mdn/content/pulls). So if there's no record in any documentation-impacting WHATWG issue or PR of an associated MDN web docs issue or PR — and nobody from the `@whatwg/documentation` has raised and MDN web docs issue or PR — then you should either [raise an MDN web docs issue](https://github.com/mdn/content/issues/new/choose) yourself, or create an MDN web docs PR.
+
+Whenever you do create such an MDN issue or PR, add a comment with the MDN issue or PR number to the associated WHATWG issue or PR — as a heads-up to the `@whatwg/documentation`·team and the WHATWG issue/PR author and to all others subscribed to that issue/PR.
 
 ### Merging pull requests
 
