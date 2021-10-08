@@ -11,5 +11,6 @@ When adding a new WHATWG standard, here is a checklist that needs to be consider
 1. Add the standard to https://github.com/whatwg/sg/blob/main/db.json and ensure the relevant details are filled in. (In case a new Workstream is needed an issue will have to be filed with the SG first for review.)
 1. SG/admin: run https://github.com/whatwg/spec-factory.
 1. SG/admin: run [`labels.py`](./labels.py) with appropriate `--repository` and `--token` parameters to create appropriate labels for the new repository.
+1. SG/admin: ensure @whatbot has write access to the repository so it can perform participant agreement checks.
 
 You should be all set. When in doubt reach out to the Steering Group.
