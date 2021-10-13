@@ -16,7 +16,7 @@ Furthermore, for changes affecting one or more implementations, ensure implement
 * [Firefox](https://bugzilla.mozilla.org/enter_bug.cgi?product=Core&component=DOM)
 * [Safari](https://bugs.webkit.org/enter_bug.cgi?product=WebKit&component=HTML%20DOM)
 
-For new features, or substantial changes to existing features, please notify the documentation team. Use the `impacts documentation` label and copy the `@whatwg/documentation` team on the PR or issue. They will help make the appropriate changes on [MDN web docs](https://developer.mozilla.org/).
+And for changes affecting [MDN web docs](https://developer.mozilla.org/), such as the introduction of new features, ensure an [MDN web docs issue](https://github.com/mdn/content/issues/new/choose) is filed (or alternatively a pull request). Ideally the `impacts documentation` label is also used and the `@whatwg/documentation` team is made aware. The team might also be able to assist, though the responsibility lies with the maintainer.
 
 ### Merging pull requests
 
