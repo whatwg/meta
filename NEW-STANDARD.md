@@ -10,7 +10,8 @@ When adding a new WHATWG standard, here is a checklist that needs to be consider
       1. Run [`labels.py`](./labels.py) with appropriate `--repository` and `--token` parameters to create appropriate labels for the new repository.
       1. Fill in "Edit repository details" on the frontpage of the repository (button next to About).
       1. Add branch protection for the default branch.
-      1. Ensure editors have write access.
+      1. Add the editors to the repository with Role: Write.
+      1. Add the @whatwg/triage team to the repository with Role: Triage.
       1. Disable "Wikis" and "Allow merge commits". Enable "Automatically delete head branches".
 1. Create an SVG logo in the right shade of green (i.e., WHATWG green) and add it to https://github.com/whatwg/whatwg.org/tree/main/resources.whatwg.org.
 1. SG/admin: create a Twitter account.
