@@ -5,12 +5,12 @@ When adding a new WHATWG standard, here is a checklist that needs to be consider
 1. Identify a shortname that is used for the spec.whatwg.org subdomain and repository (for tooling it is important that these are named identically).
    1. SG/admin: ensure the subdomain works and is configured: https://github.com/whatwg/misc-server.
    1. SG/admin: ensure there is a repository under the whatwg GitHub organization.
-      1. Give PR Preview access to the new repository.
-      1. Ensure @whatbot has write access to the repository so it can perform participant agreement checks.
+      1. Give PR Preview access to the new repository (through organization settings).
       1. Run [`labels.py`](./labels.py) with appropriate `--repository` and `--token` parameters to create appropriate labels for the new repository.
       1. Fill in "Edit repository details" on the frontpage of the repository (button next to About).
       1. Add branch protection for the default branch.
       1. Add the editors to the repository with Role: Write.
+      1. Add @whatbot to the repository with Role: Write so it can perform participant agreement checks.
       1. Add the @whatwg/triage team to the repository with Role: Triage.
       1. Disable "Wikis" and "Allow merge commits". Enable "Automatically delete head branches".
 1. Create an SVG logo in the right shade of green (i.e., WHATWG green) and add it to https://github.com/whatwg/whatwg.org/tree/main/resources.whatwg.org.
