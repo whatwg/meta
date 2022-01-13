@@ -16,7 +16,7 @@ Furthermore, for changes affecting one or more implementations, ensure implement
 * [Firefox](https://bugzilla.mozilla.org/enter_bug.cgi?product=Core&component=DOM)
 * [Safari](https://bugs.webkit.org/enter_bug.cgi?product=WebKit&component=HTML%20DOM)
 * [Deno](https://github.com/denoland/deno/issues/new) ^1
-* [Node](https://github.com/nodejs/node/issues/new) ^1
+* [Node.js](https://github.com/nodejs/node/issues/new) ^1
 
 _^1 Only for specifications that these projects implement. This is listed in the pull request template for each WHATWG specification._
 
