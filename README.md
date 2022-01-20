@@ -5,7 +5,7 @@ Welcome to `whatwg/meta`, a repository for discussing:
 * The WHATWG community
 * Overarching issues that do not fit anywhere else
 * _Your thing here_
-* [GitHub teams, labels, and contributor guidelines](#whatwg-teams)
+* [GitHub teams, labels, and contributor guidelines](#github-teams-and-labels)
 
 Open a [new issue](https://github.com/whatwg/meta/issues/new) or browse
 [open issues](https://github.com/whatwg/meta/issues) to get started.
