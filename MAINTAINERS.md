@@ -17,8 +17,11 @@ Furthermore, for changes affecting one or more implementations, ensure implement
 * [Safari](https://bugs.webkit.org/enter_bug.cgi?product=WebKit&component=HTML%20DOM)
 * [Deno](https://github.com/denoland/deno/issues/new) [^1]
 * [Node.js](https://github.com/nodejs/node/issues/new) [^1]
+* [webidl2.js](https://github.com/w3c/webidl2.js/issues/new) [^2]
+* [widlparser](https://github.com/plinss/widlparser/issues/new) [^2]
 
 [^1]: Only for specifications that these projects implement. This is listed in the pull request template for each WHATWG specification.
+[^2]: Only for Web IDL. You might consider pinging [wpt](https://github.com/web-platform-tests/wpt) and [Bikeshed](https://github.com/tabatkins/bikeshed) as well.
 
 And for changes affecting [MDN web docs](https://developer.mozilla.org/), such as the introduction of new features, ensure an [MDN web docs issue](https://github.com/mdn/content/issues/new/choose) is filed (or alternatively a pull request). Ideally the `impacts documentation` label is also used and the `@whatwg/documentation` team is made aware. The team might also be able to assist, though the responsibility lies with the maintainer.
 
