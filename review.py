@@ -51,6 +51,7 @@ def maybe_create_prs(shortnames):
 
 def maybe_create_pr(shortname):
     subprocess.run(["git", "checkout", "main"], capture_output=True)
+    subprocess.run(["git", "pull"], capture_output=True)
     commits = subprocess.run(["git", "log", "--format=%s", "--max-count=40"], capture_output=True).stdout
     for subject in commits.split(b"\n"):
         if subject.startswith(b"Meta:"):
