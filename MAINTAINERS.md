@@ -85,7 +85,7 @@ checkout-pr estark37 example-fix
 
 Per the [Workstream Policy](https://whatwg.org/workstream-policy#review-drafts), editors are expected to publish a Review Draft every six months.
 
-To accomplish this the `review.py` script is used, this:
+To accomplish this the `review.py` script is used (see below), this:
 
 1. Runs `make review` for each draft scheduled to be published that month as per [db.json](https://github.com/whatwg/sg/blob/main/db.json).
 1. Creates a pull request for the changes. The pull request body will be:
@@ -96,3 +96,11 @@ To accomplish this the `review.py` script is used, this:
    ```
 
 The editor or deputy editor will then review all is in order and merge it.
+
+### `review.py`
+
+In order to run `python review.py` successfully your environment has to meet these requirements:
+
+* You need to have the `git` command line utility installed.
+* You need to have the [`gh` command line utility](https://cli.github.com/) installed.
+* The repositories of the WHATWG standards are supposed to be in parallel directories of the directory you run the script in (presumably `meta`), named after the shortname of the respective standard. E.g., it expects that the git checkout of the Fetch standard is at `../fetch`.
