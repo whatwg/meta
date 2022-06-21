@@ -1,4 +1,7 @@
 #!/usr/bin/env python
+#
+# See https://github.com/whatwg/meta/blob/main/MAINTAINERS.md#review-drafts for some notes on how to
+# run this.
 
 import argparse, datetime, json, os, subprocess, requests
 
