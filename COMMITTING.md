@@ -37,6 +37,8 @@ Avoid using Markdown-style code markup (i.e., backticks) unless necessary for di
 
 ### Title prefixes
 
+Title prefixes are case-sensitive. Make sure to use the right spelling for them.
+
 Prefix the title line with **"Editorial: "** if the change is just to fix formatting, typos, or is a refactoring that does not change how the standard is understood. Note that bug fixes or clarifications are not editorial, even if they only affect non-normative text.
 
 Prefix the title line with **"Meta: "** for changes that do not directly affect the text of the standard, but instead the ecosystem around it, such as spec tooling or contributor documentation.
