@@ -57,6 +57,7 @@ def maybe_create_pr(shortname):
     subprocess.run(["git", "pull"], capture_output=True)
     commits = subprocess.run(["git", "log", "--format=%s", "--max-count=40"], capture_output=True).stdout
     for subject in commits.split(b"\n"):
+        subject = subject.title()
         if subject.startswith(b"Meta:"):
             continue
         elif subject.startswith(b"Review Draft Publication:"):
