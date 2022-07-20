@@ -3,8 +3,13 @@
 # See https://github.com/whatwg/meta/blob/main/MAINTAINERS.md#review-drafts for some notes on how to
 # run this.
 
-import argparse, datetime, json, os, subprocess, requests
+import argparse, datetime, json, os, subprocess, requests, glob, re
 
+
+def print_header(string):
+    print("")
+    print("\x1b[1m{}\x1b[0m".format(string))
+    print("")
 
 def fetch_json(url):
     return json.loads(requests.get(url).text)
@@ -52,27 +57,94 @@ def maybe_create_prs(shortnames):
         maybe_create_pr(shortname)
         os.chdir(".")
 
+def replace_rd_pointer(shortname, contents, path_month):
+    if shortname != "html":
+        return re.sub(
+            "Text Macro: LATESTRD [0-9]+-[0-9]+",
+            "Text Macro: LATESTRD {}".format(path_month),
+            contents
+        )
+
+    return re.sub(
+        "<a href=\"/review-drafts/[0-9]+-[0-9]+/\">",
+        "<a href=\"/review-drafts/{}/\">".format(path_month),
+        contents
+    )
+
+def add_date_to_rd(shortname, contents, today):
+    if shortname != "html":
+        metadata_date = today.strftime("%Y-%m-%d")
+        return re.sub(
+            "Group: WHATWG",
+            "Group: WHATWG\nDate: {}".format(metadata_date),
+            contents
+        )
+
+    title_date = today.strftime("%B %Y")
+    pubdate = today.strftime("%d %B %Y")
+    with_title_date = re.sub(
+        "<title w-nodev>HTML Standard</title>",
+        "<title w-nodev>HTML Standard Review Draft {}</title>".format(title_date),
+        contents
+    )
+    return re.sub(
+        "<h2 w-nohtml w-nosnap id=\"living-standard\" class=\"no-num no-toc\">Review Draft &mdash; Published <span class=\"pubdate\">\[DATE: 01 Jan 1901\]</span></h2>",
+        "<h2 w-nohtml w-nosnap id=\"living-standard\" class=\"no-num no-toc\">Review Draft &mdash; Published {}</h2>".format(pubdate),
+        with_title_date
+    )
+
 def maybe_create_pr(shortname):
-    subprocess.run(["git", "checkout", "main"], capture_output=True)
-    subprocess.run(["git", "pull"], capture_output=True)
-    commits = subprocess.run(["git", "log", "--format=%s", "--max-count=40"], capture_output=True).stdout
+    subprocess.run(["git", "checkout", "main"], capture_output=True, check=True)
+    subprocess.run(["git", "pull"], capture_output=True, check=True)
+    commits = subprocess.run(["git", "log", "--format=%s", "--max-count=40"], capture_output=True, check=True).stdout
     for subject in commits.split(b"\n"):
         if subject.startswith(b"Meta:"):
             continue
         elif subject.startswith(b"Review Draft Publication:"):
-            print("{} had no non-Meta commits since the last publication".format(shortname))
+            print_header("{} had no non-Meta commits since the last publication".format(shortname))
             return
         else:
             break
+
+    print_header("Processing {}".format(shortname))
 
     today = datetime.datetime.today()
     nice_month = today.strftime("%B %Y")
     path_month = today.strftime("%Y-%m")
 
-    # We should consider merging
-    # https://github.com/whatwg/whatwg.org/blob/main/resources.whatwg.org/build/review.sh and
-    # https://github.com/whatwg/html/blob/main/review-draft.sh into this script.
-    subprocess.run(["make", "review"])
+    subprocess.run(["git", "branch", "-D", "review-draft-{}".format(path_month)], check=True)
+    subprocess.run(["git", "checkout", "-B", "review-draft-{}".format(path_month)], check=True)
+
+    input_file = "source" if shortname == "html" else glob.glob("*.bs")[0]
+
+    with open(input_file, "r") as file:
+        contents = file.read()
+    contents = replace_rd_pointer(shortname, contents, path_month)
+    with open(input_file, "w") as file:
+        file.write(contents)
+
+    print("\nUpdated Living Standard to Point to the new Review Draft.")
+    print("Please verify that only one lined changed:")
+    subprocess.run(["git", "--no-pager", "diff"])
+
+    os.makedirs("review-drafts", exist_ok=True)
+    review_draft_contents = add_date_to_rd(shortname, contents, today)
+
+    file_extension = "wattsi" if shortname == "html" else "bs"
+    review_draft_file = "review-drafts/{}.{}".format(path_month, file_extension)
+    with open(review_draft_file, "w") as file:
+        file.write(review_draft_contents)
+
+    lines_changed = "two lines" if shortname == "html" else "one line"
+    print("\nCreated Review Draft at {}".format(review_draft_file))
+    print("Please verify that only {} changed relative to {}:".format(lines_changed, input_file))
+    subprocess.run(["git", "--no-pager", "diff", "--no-index", input_file, review_draft_file])
+
+    print("")
+
+    subprocess.run(["git", "add", input_file], check=True)
+    subprocess.run(["git", "add", "review-drafts/*"], check=True)
+    subprocess.run(["git", "commit", "-m", "Review Draft Publication: {}".format(nice_month)], check=True)
 
     # This is straight from MAINTAINERS.md and needs to be kept in sync with that.
     pr_body = """The [{} Review Draft](https://{}.spec.whatwg.org/review-drafts/{}/) for this Workstream will be published shortly after merging this pull request.

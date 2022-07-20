@@ -87,7 +87,8 @@ Per the [Workstream Policy](https://whatwg.org/workstream-policy#review-drafts),
 
 To accomplish this the `review.py` script is used (see below), this:
 
-1. Runs `make review` for each draft scheduled to be published that month as per [db.json](https://github.com/whatwg/sg/blob/main/db.json).
+1. Finds which drafts are scheduled to be published the current month as per [db.json](https://github.com/whatwg/sg/blob/main/db.json).
+1. Creates a Review Draft source file and updates the Living Standard source file to point to the newly-latest review draft.
 1. Creates a pull request for the changes. The pull request body will be:
    ```markdown
    A MONTH YEAR Review Draft (linked) for this Workstream will be published shortly after merging this pull request.
