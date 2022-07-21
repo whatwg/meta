@@ -96,8 +96,10 @@ def add_date_to_rd(shortname, contents, today):
     )
 
 def maybe_create_pr(shortname):
-    subprocess.run(["git", "checkout", "main"], capture_output=True, check=True)
-    subprocess.run(["git", "pull"], capture_output=True, check=True)
+    print_header(f"Processing {shortname}")
+
+    subprocess.run(["git", "checkout", "main"], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, check=True)
+    subprocess.run(["git", "pull"], stdout=subprocess.DEVNULL, check=True)
     commits = subprocess.run(["git", "log", "--format=%s", "--max-count=40"], capture_output=True, check=True).stdout
     for subject in commits.split(b"\n"):
         if subject.startswith(b"Meta:"):
@@ -108,13 +110,11 @@ def maybe_create_pr(shortname):
         else:
             break
 
-    print_header(f"Processing {shortname}")
-
     today = datetime.datetime.today()
     nice_month = today.strftime("%B %Y")
     path_month = today.strftime("%Y-%m")
 
-    subprocess.run(["git", "branch", "-D", f"review-draft-{path_month}"], stderr=subprocess.DEVNULL)
+    subprocess.run(["git", "branch", "-D", f"review-draft-{path_month}"], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
     subprocess.run(["git", "checkout", "-B", f"review-draft-{path_month}"], check=True)
 
     input_file = "source" if shortname == "html" else glob.glob("*.bs")[0]
@@ -144,16 +144,16 @@ def maybe_create_pr(shortname):
 
     print()
 
-    subprocess.run(["git", "add", input_file], check=True)
-    subprocess.run(["git", "add", "review-drafts/*"], check=True)
-    subprocess.run(["git", "commit", "-m", f"Review Draft Publication: {nice_month}"], check=True)
+    subprocess.run(["git", "add", input_file], stdout=subprocess.DEVNULL, check=True)
+    subprocess.run(["git", "add", "review-drafts/*"], stdout=subprocess.DEVNULL, check=True)
+    subprocess.run(["git", "commit", "-m", f"Review Draft Publication: {nice_month}"], stdout=subprocess.DEVNULL, check=True)
 
     # This is straight from MAINTAINERS.md and needs to be kept in sync with that.
     pr_body = f"""The [{nice_month} Review Draft](https://{shortname}.spec.whatwg.org/review-drafts/{path_month}/) for this Workstream will be published shortly after merging this pull request.
 
 Under the [WHATWG IPR Policy](https://whatwg.org/ipr-policy), Participants may, within 45 days after publication of a Review Draft, exclude certain Essential Patent Claims from the Review Draft Licensing Obligations. See the [IPR Policy](https://whatwg.org/ipr-policy) for details."""
 
-   subprocess.run(["gh", "pr", "create", "--title", f"Review Draft Publication: {nice_month}", "--body", pr_body])
+    subprocess.run(["gh", "pr", "create", "--title", f"Review Draft Publication: {nice_month}", "--body", pr_body])
 
 def main():
     parser = argparse.ArgumentParser()
