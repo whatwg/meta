@@ -7,9 +7,9 @@ import argparse, datetime, json, os, subprocess, requests, glob, re
 
 
 def print_header(string):
-    print("")
+    print()
     print(f"\x1b[1m{string}\x1b[0m")
-    print("")
+    print()
 
 def fetch_json(url):
     return json.loads(requests.get(url).text)
@@ -142,7 +142,7 @@ def maybe_create_pr(shortname):
     print(f"Please verify that only {lines_changed} changed relative to {input_file}:")
     subprocess.run(["git", "--no-pager", "diff", "--no-index", input_file, review_draft_file])
 
-    print("")
+    print()
 
     subprocess.run(["git", "add", input_file], check=True)
     subprocess.run(["git", "add", "review-drafts/*"], check=True)
