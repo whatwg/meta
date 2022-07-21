@@ -8,7 +8,7 @@ import argparse, datetime, json, os, subprocess, requests, glob, re
 
 def print_header(string):
     print("")
-    print("\x1b[1m{}\x1b[0m".format(string))
+    print(f"\x1b[1m{string}\x1b[0m")
     print("")
 
 def fetch_json(url):
@@ -53,7 +53,7 @@ def href_to_shortname(href):
 
 def maybe_create_prs(shortnames):
     for shortname in shortnames:
-        os.chdir("../{}".format(shortname))
+        os.chdir(f"../{shortname}")
         maybe_create_pr(shortname)
         os.chdir(".")
 
@@ -61,13 +61,13 @@ def replace_rd_pointer(shortname, contents, path_month):
     if shortname != "html":
         return re.sub(
             "Text Macro: LATESTRD [0-9]+-[0-9]+",
-            "Text Macro: LATESTRD {}".format(path_month),
+            f"Text Macro: LATESTRD {path_month}",
             contents
         )
 
     return re.sub(
         "<a href=\"/review-drafts/[0-9]+-[0-9]+/\">",
-        "<a href=\"/review-drafts/{}/\">".format(path_month),
+        f"<a href=\"/review-drafts/{path_month}/\">",
         contents
     )
 
@@ -76,7 +76,7 @@ def add_date_to_rd(shortname, contents, today):
         metadata_date = today.strftime("%Y-%m-%d")
         return re.sub(
             "Group: WHATWG",
-            "Group: WHATWG\nDate: {}".format(metadata_date),
+            f"Group: WHATWG\nDate: {metadata_date}",
             contents
         )
 
@@ -84,12 +84,14 @@ def add_date_to_rd(shortname, contents, today):
     pubdate = today.strftime("%d %B %Y")
     with_title_date = re.sub(
         "<title w-nodev>HTML Standard</title>",
-        "<title w-nodev>HTML Standard Review Draft {}</title>".format(title_date),
+        f"<title w-nodev>HTML Standard Review Draft {title_date}</title>",
         contents
     )
+
+    # This intentionally removes the <span class="pubdate"> since otherwise Wattsi would put in the build date.
     return re.sub(
         "<h2 w-nohtml w-nosnap id=\"living-standard\" class=\"no-num no-toc\">Review Draft &mdash; Published <span class=\"pubdate\">\[DATE: 01 Jan 1901\]</span></h2>",
-        "<h2 w-nohtml w-nosnap id=\"living-standard\" class=\"no-num no-toc\">Review Draft &mdash; Published {}</h2>".format(pubdate),
+        f"<h2 w-nohtml w-nosnap id=\"living-standard\" class=\"no-num no-toc\">Review Draft &mdash; Published {pubdate}</h2>",
         with_title_date
     )
 
@@ -101,19 +103,19 @@ def maybe_create_pr(shortname):
         if subject.startswith(b"Meta:"):
             continue
         elif subject.startswith(b"Review Draft Publication:"):
-            print_header("{} had no non-Meta commits since the last publication".format(shortname))
+            print_header(f"{shortname} had no non-Meta commits since the last publication")
             return
         else:
             break
 
-    print_header("Processing {}".format(shortname))
+    print_header(f"Processing {shortname}")
 
     today = datetime.datetime.today()
     nice_month = today.strftime("%B %Y")
     path_month = today.strftime("%Y-%m")
 
-    subprocess.run(["git", "branch", "-D", "review-draft-{}".format(path_month)], check=True)
-    subprocess.run(["git", "checkout", "-B", "review-draft-{}".format(path_month)], check=True)
+    subprocess.run(["git", "branch", "-D", f"review-draft-{path_month}"], stderr=subprocess.DEVNULL)
+    subprocess.run(["git", "checkout", "-B", f"review-draft-{path_month}"], check=True)
 
     input_file = "source" if shortname == "html" else glob.glob("*.bs")[0]
 
@@ -131,27 +133,27 @@ def maybe_create_pr(shortname):
     review_draft_contents = add_date_to_rd(shortname, contents, today)
 
     file_extension = "wattsi" if shortname == "html" else "bs"
-    review_draft_file = "review-drafts/{}.{}".format(path_month, file_extension)
+    review_draft_file = f"review-drafts/{path_month}.{file_extension}"
     with open(review_draft_file, "w") as file:
         file.write(review_draft_contents)
 
     lines_changed = "two lines" if shortname == "html" else "one line"
-    print("\nCreated Review Draft at {}".format(review_draft_file))
-    print("Please verify that only {} changed relative to {}:".format(lines_changed, input_file))
+    print(f"\nCreated Review Draft at {review_draft_file}")
+    print(f"Please verify that only {lines_changed} changed relative to {input_file}:")
     subprocess.run(["git", "--no-pager", "diff", "--no-index", input_file, review_draft_file])
 
     print("")
 
     subprocess.run(["git", "add", input_file], check=True)
     subprocess.run(["git", "add", "review-drafts/*"], check=True)
-    subprocess.run(["git", "commit", "-m", "Review Draft Publication: {}".format(nice_month)], check=True)
+    subprocess.run(["git", "commit", "-m", f"Review Draft Publication: {nice_month}"], check=True)
 
     # This is straight from MAINTAINERS.md and needs to be kept in sync with that.
-    pr_body = """The [{} Review Draft](https://{}.spec.whatwg.org/review-drafts/{}/) for this Workstream will be published shortly after merging this pull request.
+    pr_body = f"""The [{nice_month} Review Draft](https://{shortname}.spec.whatwg.org/review-drafts/{path_month}/) for this Workstream will be published shortly after merging this pull request.
 
-Under the [WHATWG IPR Policy](https://whatwg.org/ipr-policy), Participants may, within 45 days after publication of a Review Draft, exclude certain Essential Patent Claims from the Review Draft Licensing Obligations. See the [IPR Policy](https://whatwg.org/ipr-policy) for details.""".format(nice_month, shortname, path_month)
+Under the [WHATWG IPR Policy](https://whatwg.org/ipr-policy), Participants may, within 45 days after publication of a Review Draft, exclude certain Essential Patent Claims from the Review Draft Licensing Obligations. See the [IPR Policy](https://whatwg.org/ipr-policy) for details."""
 
-    subprocess.run(["gh", "pr", "create", "--title", "Review Draft Publication: {}".format(nice_month), "--body", pr_body])
+   subprocess.run(["gh", "pr", "create", "--title", f"Review Draft Publication: {nice_month}", "--body", pr_body])
 
 def main():
     parser = argparse.ArgumentParser()
