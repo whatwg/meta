@@ -3,8 +3,13 @@
 # See https://github.com/whatwg/meta/blob/main/MAINTAINERS.md#review-drafts for some notes on how to
 # run this.
 
-import argparse, datetime, json, os, subprocess, requests
+import argparse, datetime, json, os, subprocess, requests, glob, re
 
+
+def print_header(string):
+    print()
+    print(f"\x1b[1m{string}\x1b[0m")
+    print()
 
 def fetch_json(url):
     return json.loads(requests.get(url).text)
@@ -46,44 +51,111 @@ def find_shortnames(workstreams, month=None):
 def href_to_shortname(href):
     return href[len("https://"):href.index(".")]
 
-def maybe_create_prs(shortnames):
-    for shortname in shortnames:
-        os.chdir("../{}".format(shortname))
-        maybe_create_pr(shortname)
-        os.chdir(".")
+def replace_rd_pointer(shortname, contents, path_month):
+    if shortname != "html":
+        return re.sub(
+            "Text Macro: LATESTRD [0-9]+-[0-9]+",
+            f"Text Macro: LATESTRD {path_month}",
+            contents
+        )
 
-def maybe_create_pr(shortname):
-    subprocess.run(["git", "checkout", "main"], capture_output=True)
-    subprocess.run(["git", "pull"], capture_output=True)
-    commits = subprocess.run(["git", "log", "--format=%s", "--max-count=40"], capture_output=True).stdout
+    return re.sub(
+        "<a href=\"/review-drafts/[0-9]+-[0-9]+/\">",
+        f"<a href=\"/review-drafts/{path_month}/\">",
+        contents
+    )
+
+def add_date_to_rd(shortname, contents, today):
+    if shortname != "html":
+        metadata_date = today.strftime("%Y-%m-%d")
+        return re.sub(
+            "Group: WHATWG",
+            f"Group: WHATWG\nStatus: RD\nDate: {metadata_date}",
+            contents
+        )
+
+    title_date = today.strftime("%B %Y")
+    pubdate = today.strftime("%d %B %Y")
+    with_title_date = re.sub(
+        "<title w-nodev>HTML Standard</title>",
+        f"<title w-nodev>HTML Standard Review Draft {title_date}</title>",
+        contents
+    )
+
+    # This intentionally removes the <span class="pubdate"> since otherwise Wattsi would put in the build date.
+    return re.sub(
+        "<h2 w-nohtml w-nosnap id=\"living-standard\" class=\"no-num no-toc\">Review Draft &mdash; Published <span class=\"pubdate\">\[DATE: 01 Jan 1901\]</span></h2>",
+        f"<h2 w-nohtml w-nosnap id=\"living-standard\" class=\"no-num no-toc\">Review Draft &mdash; Published {pubdate}</h2>",
+        with_title_date
+    )
+
+def create_pr(shortname, today):
+    nice_month = today.strftime("%B %Y")
+
+    # This is straight from MAINTAINERS.md and needs to be kept in sync with that.
+    pr_body = f"""The [{nice_month} Review Draft](https://{shortname}.spec.whatwg.org/review-drafts/{path_month}/) for this Workstream will be published shortly after merging this pull request.
+
+Under the [WHATWG IPR Policy](https://whatwg.org/ipr-policy), Participants may, within 45 days after publication of a Review Draft, exclude certain Essential Patent Claims from the Review Draft Licensing Obligations. See the [IPR Policy](https://whatwg.org/ipr-policy) for details."""
+
+    subprocess.run(["gh", "pr", "create", "--title", f"Review Draft Publication: {nice_month}", "--body", pr_body])
+
+def maybe_create_branch(shortname, today):
+    subprocess.run(["git", "checkout", "main"], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, check=True)
+    subprocess.run(["git", "pull"], stdout=subprocess.DEVNULL, check=True)
+    commits = subprocess.run(["git", "log", "--format=%s", "--max-count=40"], capture_output=True, check=True).stdout
     for subject in commits.split(b"\n"):
         if subject.startswith(b"Meta:"):
             continue
         elif subject.startswith(b"Review Draft Publication:"):
-            print("{} had no non-Meta commits since the last publication".format(shortname))
-            return
+            print_header(f"{shortname} had no non-Meta commits since the last publication")
+            return False
         else:
+            print_header(f"Processing {shortname}")
             break
 
-    today = datetime.datetime.today()
     nice_month = today.strftime("%B %Y")
     path_month = today.strftime("%Y-%m")
 
-    # We should consider merging
-    # https://github.com/whatwg/whatwg.org/blob/main/resources.whatwg.org/build/review.sh and
-    # https://github.com/whatwg/html/blob/main/review-draft.sh into this script.
-    subprocess.run(["make", "review"])
+    subprocess.run(["git", "branch", "-D", f"review-draft-{path_month}"], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+    subprocess.run(["git", "checkout", "-B", f"review-draft-{path_month}"], check=True)
 
-    # This is straight from MAINTAINERS.md and needs to be kept in sync with that.
-    pr_body = """The [{} Review Draft](https://{}.spec.whatwg.org/review-drafts/{}/) for this Workstream will be published shortly after merging this pull request.
+    input_file = "source" if shortname == "html" else glob.glob("*.bs")[0]
 
-Under the [WHATWG IPR Policy](https://whatwg.org/ipr-policy), Participants may, within 45 days after publication of a Review Draft, exclude certain Essential Patent Claims from the Review Draft Licensing Obligations. See the [IPR Policy](https://whatwg.org/ipr-policy) for details.""".format(nice_month, shortname, path_month)
+    with open(input_file, "r") as file:
+        contents = file.read()
+    contents = replace_rd_pointer(shortname, contents, path_month)
+    with open(input_file, "w") as file:
+        file.write(contents)
 
-    subprocess.run(["gh", "pr", "create", "--title", "Review Draft Publication: {}".format(nice_month), "--body", pr_body])
+    print("\nUpdated Living Standard to Point to the new Review Draft.")
+    print("Please verify that only one lined changed:")
+    subprocess.run(["git", "--no-pager", "diff"])
+
+    os.makedirs("review-drafts", exist_ok=True)
+    review_draft_contents = add_date_to_rd(shortname, contents, today)
+
+    file_extension = "wattsi" if shortname == "html" else "bs"
+    review_draft_file = f"review-drafts/{path_month}.{file_extension}"
+    with open(review_draft_file, "w") as file:
+        file.write(review_draft_contents)
+
+    print(f"\nCreated Review Draft at {review_draft_file}")
+    print(f"Please verify that only two lines changed relative to {input_file}:")
+    subprocess.run(["git", "--no-pager", "diff", "--no-index", input_file, review_draft_file])
+
+    print()
+
+    subprocess.run(["git", "add", input_file], stdout=subprocess.DEVNULL, check=True)
+    subprocess.run(["git", "add", "review-drafts/*"], stdout=subprocess.DEVNULL, check=True)
+    subprocess.run(["git", "commit", "-m", f"Review Draft Publication: {nice_month}"], stdout=subprocess.DEVNULL, check=True)
+
+    return True
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--force", dest="force", action="store_true")
+    parser.add_argument("shortnames", nargs="*", help="Optional spec shortnames to create. If omitted, will use this month's per db.json.")
+    parser.add_argument("-f", "--force", action="store_true", help="bypass date checks")
+    parser.add_argument("-p", "--pr", action="store_true", help="create pull requests in addition to branches")
     args = parser.parse_args()
 
     today = datetime.datetime.today()
@@ -103,14 +175,21 @@ def main():
             print("It's 3 days after publication, hopefully you already published. Use --force to ignore.")
             exit(1)
 
-    db = fetch_json("https://github.com/whatwg/sg/raw/main/db.json")
-    shortnames = find_shortnames(db["workstreams"], today.month)
+    shortnames = args.shortnames
+    if not shortnames:
+        db = fetch_json("https://github.com/whatwg/sg/raw/main/db.json")
+        shortnames = find_shortnames(db["workstreams"], today.month)
 
     if len(shortnames) == 0:
         print("Looks like there's nothing to be published this month.")
         exit(1)
 
-    maybe_create_prs(shortnames)
+    for shortname in shortnames:
+        os.chdir(f"../{shortname}")
+        branch_created = maybe_create_branch(shortname, today)
+        if (branch_created and args.pr):
+            create_pr(shortname, today)
+        os.chdir(".")
 
 if __name__ == "__main__":
     main()
