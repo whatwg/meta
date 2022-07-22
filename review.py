@@ -51,12 +51,6 @@ def find_shortnames(workstreams, month=None):
 def href_to_shortname(href):
     return href[len("https://"):href.index(".")]
 
-def maybe_create_prs(shortnames):
-    for shortname in shortnames:
-        os.chdir(f"../{shortname}")
-        maybe_create_pr(shortname)
-        os.chdir(".")
-
 def replace_rd_pointer(shortname, contents, path_month):
     if shortname != "html":
         return re.sub(
@@ -95,9 +89,17 @@ def add_date_to_rd(shortname, contents, today):
         with_title_date
     )
 
-def maybe_create_pr(shortname):
-    print_header(f"Processing {shortname}")
+def create_pr(shortname, today):
+    nice_month = today.strftime("%B %Y")
 
+    # This is straight from MAINTAINERS.md and needs to be kept in sync with that.
+    pr_body = f"""The [{nice_month} Review Draft](https://{shortname}.spec.whatwg.org/review-drafts/{path_month}/) for this Workstream will be published shortly after merging this pull request.
+
+Under the [WHATWG IPR Policy](https://whatwg.org/ipr-policy), Participants may, within 45 days after publication of a Review Draft, exclude certain Essential Patent Claims from the Review Draft Licensing Obligations. See the [IPR Policy](https://whatwg.org/ipr-policy) for details."""
+
+    subprocess.run(["gh", "pr", "create", "--title", f"Review Draft Publication: {nice_month}", "--body", pr_body])
+
+def maybe_create_branch(shortname, today):
     subprocess.run(["git", "checkout", "main"], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, check=True)
     subprocess.run(["git", "pull"], stdout=subprocess.DEVNULL, check=True)
     commits = subprocess.run(["git", "log", "--format=%s", "--max-count=40"], capture_output=True, check=True).stdout
@@ -106,11 +108,11 @@ def maybe_create_pr(shortname):
             continue
         elif subject.startswith(b"Review Draft Publication:"):
             print_header(f"{shortname} had no non-Meta commits since the last publication")
-            return
+            return False
         else:
+            print_header(f"Processing {shortname}")
             break
 
-    today = datetime.datetime.today()
     nice_month = today.strftime("%B %Y")
     path_month = today.strftime("%Y-%m")
 
@@ -147,16 +149,13 @@ def maybe_create_pr(shortname):
     subprocess.run(["git", "add", "review-drafts/*"], stdout=subprocess.DEVNULL, check=True)
     subprocess.run(["git", "commit", "-m", f"Review Draft Publication: {nice_month}"], stdout=subprocess.DEVNULL, check=True)
 
-    # This is straight from MAINTAINERS.md and needs to be kept in sync with that.
-    pr_body = f"""The [{nice_month} Review Draft](https://{shortname}.spec.whatwg.org/review-drafts/{path_month}/) for this Workstream will be published shortly after merging this pull request.
-
-Under the [WHATWG IPR Policy](https://whatwg.org/ipr-policy), Participants may, within 45 days after publication of a Review Draft, exclude certain Essential Patent Claims from the Review Draft Licensing Obligations. See the [IPR Policy](https://whatwg.org/ipr-policy) for details."""
-
-    subprocess.run(["gh", "pr", "create", "--title", f"Review Draft Publication: {nice_month}", "--body", pr_body])
+    return True
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--force", dest="force", action="store_true")
+    parser.add_argument("shortnames", nargs="*", help="Optional spec shortnames to create. If omitted, will use this month's per db.json.")
+    parser.add_argument("-f", "--force", action="store_true", help="bypass date checks")
+    parser.add_argument("-p", "--pr", action="store_true", help="create pull requests in addition to branches")
     args = parser.parse_args()
 
     today = datetime.datetime.today()
@@ -176,14 +175,21 @@ def main():
             print("It's 3 days after publication, hopefully you already published. Use --force to ignore.")
             exit(1)
 
-    db = fetch_json("https://github.com/whatwg/sg/raw/main/db.json")
-    shortnames = find_shortnames(db["workstreams"], today.month)
+    shortnames = args.shortnames
+    if not shortnames:
+        db = fetch_json("https://github.com/whatwg/sg/raw/main/db.json")
+        shortnames = find_shortnames(db["workstreams"], today.month)
 
     if len(shortnames) == 0:
         print("Looks like there's nothing to be published this month.")
         exit(1)
 
-    maybe_create_prs(shortnames)
+    for shortname in shortnames:
+        os.chdir(f"../{shortname}")
+        branch_created = maybe_create_branch(shortname, today)
+        if (branch_created and args.pr):
+            create_pr(shortname, today)
+        os.chdir(".")
 
 if __name__ == "__main__":
     main()
