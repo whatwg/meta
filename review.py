@@ -76,7 +76,7 @@ def add_date_to_rd(shortname, contents, today):
         metadata_date = today.strftime("%Y-%m-%d")
         return re.sub(
             "Group: WHATWG",
-            f"Group: WHATWG\nDate: {metadata_date}",
+            f"Group: WHATWG\nStatus: RD\nDate: {metadata_date}",
             contents
         )
 
@@ -137,9 +137,8 @@ def maybe_create_pr(shortname):
     with open(review_draft_file, "w") as file:
         file.write(review_draft_contents)
 
-    lines_changed = "two lines" if shortname == "html" else "one line"
     print(f"\nCreated Review Draft at {review_draft_file}")
-    print(f"Please verify that only {lines_changed} changed relative to {input_file}:")
+    print(f"Please verify that only two lines changed relative to {input_file}:")
     subprocess.run(["git", "--no-pager", "diff", "--no-index", input_file, review_draft_file])
 
     print()
