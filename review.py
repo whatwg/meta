@@ -91,6 +91,7 @@ def add_date_to_rd(shortname, contents, today):
 
 def create_pr(shortname, today):
     nice_month = today.strftime("%B %Y")
+    path_month = today.strftime("%Y-%m")
 
     # This is straight from MAINTAINERS.md and needs to be kept in sync with that.
     pr_body = f"""The [{nice_month} Review Draft](https://{shortname}.spec.whatwg.org/review-drafts/{path_month}/) for this Workstream will be published shortly after merging this pull request.
