@@ -102,6 +102,7 @@ The editor or deputy editor will then review all is in order and merge it.
 
 In order to run `python review.py` successfully your environment has to meet these requirements:
 
+* You need to have the relevant Python packages installed, in particular [`requests`](https://pypi.org/project/requests/).
 * You need to have the `git` command line utility installed.
 * You need to have the [`gh` command line utility](https://cli.github.com/) installed.
 * The repositories of the WHATWG standards are supposed to be in parallel directories of the directory you run the script in (presumably `meta`), named after the shortname of the respective standard. E.g., it expects that the git checkout of the Fetch standard is at `../fetch`.
