@@ -18,6 +18,7 @@ At the time of writing, the following teams exist:
 - **documentation** — Documentation for features in WHATWG standards
 - **dom** — For those interested in helping designing and maintaining the DOM Standard
 - **forms** — Folks interested in taking forms further
+- **fs** — People who work on the File System standard
 - **html-parser** — The HTML Parser
 - **html-triage** — People attending the [HTML triage meeting](https://github.com/whatwg/html/issues/6371)
 - **http** — HTTP-related matters
