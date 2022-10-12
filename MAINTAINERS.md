@@ -12,9 +12,9 @@ If a follow-up issue is filed in the web-platform-tests repository, add the `typ
 
 Furthermore, for changes affecting one or more implementations, ensure implementation bugs are filed:
 
-* [Chrome](https://crbug.com/new)
-* [Firefox](https://bugzilla.mozilla.org/enter_bug.cgi?product=Core&component=DOM)
-* [Safari](https://bugs.webkit.org/enter_bug.cgi?product=WebKit&component=HTML%20DOM)
+* [Chromium](https://crbug.com/new)
+* [Gecko](https://bugzilla.mozilla.org/enter_bug.cgi?product=Core&component=DOM)
+* [WebKit](https://bugs.webkit.org/enter_bug.cgi?product=WebKit&component=HTML%20DOM)
 * [Deno](https://github.com/denoland/deno/issues/new) [^1]
 * [Node.js](https://github.com/nodejs/node/issues/new) [^1]
 * [webidl2.js](https://github.com/w3c/webidl2.js/issues/new) [^2]
