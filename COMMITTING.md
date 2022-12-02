@@ -23,7 +23,7 @@ For more on this topic, see ["On commit messages"](https://who-t.blogspot.com/20
 
 ### Structure and conventions
 
-Commit messages consist of a single title line, a blank line, and then a more detailed change description. The description (and preceding blank line) may be omitted for simple fixes.
+Commit messages consist of a single title line, a blank line, and then a more detailed change description. The description (and preceding blank line) may be omitted for simple fixes that do not need to close a particular issue.
 
 The commit title should be at most 72 characters, to make it easier to view in GitHub and other tools. Some sources recommend restricting the title line to 50 characters, but we do not enforce this. Enforcing this limit for subsequent lines is optional. Single "words" are exempted (e.g., URLs), though should not occur in the title.
 
@@ -31,7 +31,7 @@ The title must be written in imperative mode, as if commanding someone. This mea
 
 Title lines must not end in a period; they are titles, not sentences.
 
-Be sure to reference related GitHub issues within pull requests so they are appropriately cross-linked by GitHub. Use "closes" or "fixes" as appropriate to [automatically close issues](https://help.github.com/articles/closing-issues-using-keywords/).
+Be sure to reference related GitHub issues within commit message descriptions so they are appropriately cross-linked by GitHub. Use "closes" or "fixes" as appropriate to [automatically close issues](https://help.github.com/articles/closing-issues-using-keywords/).
 
 Avoid using Markdown-style code markup (i.e., backticks) unless necessary for disambiguation.
 
@@ -47,14 +47,23 @@ In general, most commits do not have a prefix.
 
 (The prefix **"Review Draft Publication: "** is used for a Review Draft publication, a semi-automated process.)
 
+### Squash and merge
+
+Special care is needed when using GitHub's "Squash and merge" feature. In particular:
+
+1. Remove the pull request reference from the commit title.
+2. Edit the commit description to make it read as a single coherent description.
+
 ### Example
 
 ```
-Editorial: Fix formatting and typo
-
-Fixes #35, fixes #38, fixes #21
+Editorial: fix formatting and typo
 
 This is descriptive text providing details further explaining the title above. There is no restriction to the line length of this commit summary.
 
 Do remember to insert a single blank line between multiple paragraphs within the commit summary.
+
+Tests: https://github.com/web-platform-tests/wpt/pull/37250.
+
+Fixes #35, fixes #38, and fixes #21.
 ```
