@@ -22,6 +22,11 @@
     "name": "addition/proposal"
   },
   {
+    "color": "000000",
+    "description": "To be discussed at a triage meeting",
+    "name": "agenda+"
+  },
+  {
     "color": "ececec",
     "description": "Identifies issues opened by other standards organizations, as per WHATWG's [anchor permanence policy](https://whatwg.org/working-mode#anchors)",
     "name": "anchor permanence",
