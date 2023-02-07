@@ -151,11 +151,11 @@ def adjust_repository_labels(organization, repository, token, labels_resource):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--import-w3c", action="store_true")
-    parser.add_argument("--update", action="store_true")
-    parser.add_argument("--repository")
-    parser.add_argument("--all-whatwg-standards", action="store_true")
-    parser.add_argument("--token")
+    parser.add_argument("--import-w3c", action="store_true", help="imports labels from the W3C")
+    parser.add_argument("--update", action="store_true", help="sort JSON entries and update Markdown documentation")
+    parser.add_argument("--repository", help="update labels on a single repository, e.g., whatwg/fetch; requires --token")
+    parser.add_argument("--all-whatwg-standards", action="store_true", help="update labels on all WHATWG standards; requires --token")
+    parser.add_argument("--token", help="a GitHub token that allows you to modify labels on WHATWG repositories")
     args = parser.parse_args()
 
     labels_resource = "labels.json"
@@ -178,10 +178,6 @@ def main():
             print("About to process", repository)
             adjust_repository_labels("whatwg", repository, args.token, labels_resource)
     else:
-        print("Please invoke as one of:\n\n" + \
-              "./labels.py --import-w3c\n" + \
-              "./labels.py --update\n" + \
-              "./labels.py --repository <x/y> --token <token>\n" + \
-              "./labels.py --all-whatwg-standards --token <token>")
+        parser.print_usage()
 
 main()
