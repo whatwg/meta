@@ -17,6 +17,7 @@ Furthermore, for changes affecting one or more implementations, ensure implement
 * [WebKit](https://bugs.webkit.org/enter_bug.cgi?product=WebKit&component=HTML%20DOM)
 * [Deno](https://github.com/denoland/deno/issues/new) [^1]
 * [Node.js](https://github.com/nodejs/node/issues/new) [^1]
+* [Ada](https://github.com/ada-url/ada/issues/new) [^1]
 * [webidl2.js](https://github.com/w3c/webidl2.js/issues/new) [^2]
 * [widlparser](https://github.com/plinss/widlparser/issues/new) [^2]
 
