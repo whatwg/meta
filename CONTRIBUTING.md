@@ -22,7 +22,7 @@ See [COMMITTING.md](COMMITTING.md) for further details.
 
 Leave the **Allow edits from maintainers** option enabled to allow reviewers to fix trivial issues directly on your branch rather than needing to write review comments asking you make the edits. For more details, see [Improving collaboration with forks](https://github.com/blog/2247-improving-collaboration-with-forks) in the GitHub Blog.
 
-After you have created a pull request, HTML and HTML diff output will be generated, and a bot will take care of linking those from your pull request comment (typically within several minutes). These are useful for review and implementing from the standard with the proposed change incorperated.
+After you have created a pull request, HTML and HTML diff output will be generated, and a bot will take care of linking those from your pull request comment (typically within several minutes). These are useful for review and implementing from the standard with the proposed change incorporated.
 
 ## Building
 
