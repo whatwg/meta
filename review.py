@@ -122,10 +122,10 @@ def maybe_create_branch(shortname, today):
 
     input_file = "source" if shortname == "html" else glob.glob("*.bs")[0]
 
-    with open(input_file, "r") as file:
+    with open(input_file, "r", encoding="utf-8", newline="\n") as file:
         contents = file.read()
     contents = replace_rd_pointer(shortname, contents, path_month)
-    with open(input_file, "w") as file:
+    with open(input_file, "w", encoding="utf-8", newline="\n") as file:
         file.write(contents)
 
     print("\nUpdated Living Standard to Point to the new Review Draft.")
@@ -137,7 +137,7 @@ def maybe_create_branch(shortname, today):
 
     file_extension = "wattsi" if shortname == "html" else "bs"
     review_draft_file = f"review-drafts/{path_month}.{file_extension}"
-    with open(review_draft_file, "w") as file:
+    with open(review_draft_file, "w", encoding="utf-8", newline="\n") as file:
         file.write(review_draft_contents)
 
     print(f"\nCreated Review Draft at {review_draft_file}")
