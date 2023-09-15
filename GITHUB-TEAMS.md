@@ -26,6 +26,7 @@ At the time of writing, the following teams exist:
 - **loader** — The loader concept
 - **media** — The HTML media elements and their API
 - **modules** — Javascript modules
+- **perf** — Matters of performance
 - **rendering** — The rendering section
 - **security** — Security-related matters
 - **sg** — Steering group
