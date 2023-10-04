@@ -30,6 +30,11 @@ These are labels used by all [WHATWG standards](https://spec.whatwg.org/):
 * [needs tests](https://github.com/search?q=org%3Awhatwg+label%3A%22needs+tests%22+is%3Aopen): Moving the issue forward requires someone to write tests
 * [removal/deprecation](https://github.com/search?q=org%3Awhatwg+label%3A%22removal%2Fdeprecation%22+is%3Aopen): Removing or deprecating a feature
 * [security/privacy](https://github.com/search?q=org%3Awhatwg+label%3A%22security%2Fprivacy%22+is%3Aopen): There are security or privacy implications
+* [stage: 0](https://github.com/search?q=org%3Awhatwg+label%3A%22stage%3A+0%22+is%3Aopen): Proposal
+* [stage: 1](https://github.com/search?q=org%3Awhatwg+label%3A%22stage%3A+1%22+is%3Aopen): Incubation
+* [stage: 2](https://github.com/search?q=org%3Awhatwg+label%3A%22stage%3A+2%22+is%3Aopen): Iteration
+* [stage: 3](https://github.com/search?q=org%3Awhatwg+label%3A%22stage%3A+3%22+is%3Aopen): Committed
+* [stage: 4](https://github.com/search?q=org%3Awhatwg+label%3A%22stage%3A+4%22+is%3Aopen): Standard
 * [topic: custom elements](https://github.com/search?q=org%3Awhatwg+label%3A%22topic%3A+custom+elements%22+is%3Aopen): Relates to custom elements (as defined in DOM and HTML)
 * [topic: shadow](https://github.com/search?q=org%3Awhatwg+label%3A%22topic%3A+shadow%22+is%3Aopen): Relates to shadow trees (as defined in DOM)
 

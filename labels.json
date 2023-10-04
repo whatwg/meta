@@ -180,6 +180,31 @@
     "name": "security/privacy"
   },
   {
+    "color": "1d76db",
+    "description": "Proposal",
+    "name": "stage: 0"
+  },
+  {
+    "color": "1d76db",
+    "description": "Incubation",
+    "name": "stage: 1"
+  },
+  {
+    "color": "1d76db",
+    "description": "Iteration",
+    "name": "stage: 2"
+  },
+  {
+    "color": "1d76db",
+    "description": "Committed",
+    "name": "stage: 3"
+  },
+  {
+    "color": "1d76db",
+    "description": "Standard",
+    "name": "stage: 4"
+  },
+  {
     "color": "7fff00",
     "description": "Issue the Technical Architecture Group has raised and looks for a response on.",
     "name": "tag-needs-resolution",
