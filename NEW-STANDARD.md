@@ -3,7 +3,9 @@
 When adding a new WHATWG standard, here is a checklist that needs to be considered. When coordination is required with the SG or an administrator of the WHATWG GitHub, the step is prefixed with SG/admin.
 
 1. Identify a shortname that is used for the spec.whatwg.org subdomain and repository (for tooling it is important that these are named identically).
-   1. SG/admin: ensure the subdomain works and is configured: https://github.com/whatwg/misc-server.
+   1. SG/admin: ensure the subdomain works and is configured:
+      1. Update and deploy https://github.com/whatwg/misc-server.
+      1. Configure the new A record on the DigitalOcean control panel. 
    1. SG/admin: ensure there is a repository under the whatwg GitHub organization.
       1. Give PR Preview access to the new repository (through organization settings).
       1. Run [`labels.py`](./labels.py) with appropriate `--repository` and `--token` parameters to create appropriate labels for the new repository.
