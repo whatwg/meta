@@ -6,6 +6,7 @@ These are labels used by all [WHATWG standards](https://spec.whatwg.org/):
 
 * [accessibility](https://github.com/search?q=org%3Awhatwg+label%3A%22accessibility%22+is%3Aopen): Affects accessibility
 * [addition/proposal](https://github.com/search?q=org%3Awhatwg+label%3A%22addition%2Fproposal%22+is%3Aopen): New features or enhancements
+* [affects documentation](https://github.com/search?q=org%3Awhatwg+label%3A%22affects+documentation%22%2C%22impacts+documentation%22): Used by documentation communities, such as MDN, to track changes that affect documentation
 * [agenda+](https://github.com/search?q=org%3Awhatwg+label%3A%22agenda%2B%22+is%3Aopen): To be discussed at a triage meeting
 * [anchor permanence](https://github.com/search?q=org%3Awhatwg+label%3A%22anchor+permanence%22): Identifies issues opened by other standards organizations, as per WHATWG's [anchor permanence policy](https://whatwg.org/working-mode#anchors)
 * [clarification](https://github.com/search?q=org%3Awhatwg+label%3A%22clarification%22+is%3Aopen): Standard could be clearer
@@ -22,7 +23,6 @@ These are labels used by all [WHATWG standards](https://spec.whatwg.org/):
 * [i18n-jlreq](https://github.com/search?q=org%3Awhatwg+label%3A%22i18n-jlreq%22+is%3Aopen): Notifies Japanese script experts of relevant issues
 * [i18n-klreq](https://github.com/search?q=org%3Awhatwg+label%3A%22i18n-klreq%22+is%3Aopen): Notifies Korean script experts of relevant issues
 * [i18n-mlreq](https://github.com/search?q=org%3Awhatwg+label%3A%22i18n-mlreq%22+is%3Aopen): Notifies traditional Mongolian script experts of relevant issues
-* [impacts documentation](https://github.com/search?q=org%3Awhatwg+label%3A%22impacts+documentation%22): Used by documentation communities, such as MDN, to track changes that impact documentation
 * [interop](https://github.com/search?q=org%3Awhatwg+label%3A%22interop%22+is%3Aopen): Implementations are not interoperable with each other
 * [meta](https://github.com/search?q=org%3Awhatwg+label%3A%22meta%22+is%3Aopen): Changes to the ecosystem around the standard, not its contents.
 * [needs concrete proposal](https://github.com/search?q=org%3Awhatwg+label%3A%22needs+concrete+proposal%22+is%3Aopen): Moving the issue forward requires someone to figure out a detailed plan

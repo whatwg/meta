@@ -74,6 +74,6 @@ For any changes please take into account the following principles and guidelines
 * [WHATWG Working Mode](https://whatwg.org/working-mode)
 * [WHATWG FAQ](https://whatwg.org/faq), in particular [Is there a process for removing bad ideas from a standard?](https://whatwg.org/faq#removing-bad-ideas) and [How should I go about proposing new features to WHATWG standards?](https://whatwg.org/faq#adding-new-features)
 
-## Downstream impact
+## Downstream effects
 
-If you change exported definitions or algorithms, [Webdex](https://dontcallmedom.github.io/webdex/) allows you to evaluate the impact of your change on other specifications. If any are impacted please do notify them by filing issues or creating pull requests.
+If you change exported definitions or algorithms, [Webdex](https://dontcallmedom.github.io/webdex/) allows you to evaluate the effects of your change on other specifications. If any are affected, please do notify them by filing issues or creating pull requests.

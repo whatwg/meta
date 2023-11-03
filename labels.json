@@ -22,6 +22,12 @@
     "name": "addition/proposal"
   },
   {
+    "color": "ececec",
+    "description": "Used by documentation communities, such as MDN, to track changes that affect documentation",
+    "name": "affects documentation",
+    "url_exclude_is_open": true
+  },
+  {
     "color": "000000",
     "description": "To be discussed at a triage meeting",
     "name": "agenda+"
@@ -113,12 +119,6 @@
     "description": "Group bringing to attention of Internationalization, or tracked by i18n but not needing response.",
     "name": "i18n-tracker",
     "w3c": true
-  },
-  {
-    "color": "ececec",
-    "description": "Used by documentation communities, such as MDN, to track changes that impact documentation",
-    "name": "impacts documentation",
-    "url_exclude_is_open": true
   },
   {
     "color": "c5def5",
