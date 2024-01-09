@@ -126,6 +126,11 @@
     "name": "interop"
   },
   {
+    "color": "e4e669",
+    "description": "Used to mark off-topic or spam issues or PRs",
+    "name": "invalid"
+  },
+  {
     "color": "fcabe1",
     "description": "Changes to the ecosystem around the standard, not its contents.",
     "name": "meta"

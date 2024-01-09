@@ -24,6 +24,7 @@ These are labels used by all [WHATWG standards](https://spec.whatwg.org/):
 * [i18n-mlreq](https://github.com/search?q=org%3Awhatwg+label%3A%22i18n-mlreq%22+is%3Aopen): Notifies traditional Mongolian script experts of relevant issues
 * [impacts documentation](https://github.com/search?q=org%3Awhatwg+label%3A%22impacts+documentation%22): Used by documentation communities, such as MDN, to track changes that impact documentation
 * [interop](https://github.com/search?q=org%3Awhatwg+label%3A%22interop%22+is%3Aopen): Implementations are not interoperable with each other
+* [invalid](https://github.com/search?q=org%3Awhatwg+label%3A%22invalid%22+is%3Aopen): Used to mark off-topic or spam issues or PRs
 * [meta](https://github.com/search?q=org%3Awhatwg+label%3A%22meta%22+is%3Aopen): Changes to the ecosystem around the standard, not its contents.
 * [needs concrete proposal](https://github.com/search?q=org%3Awhatwg+label%3A%22needs+concrete+proposal%22+is%3Aopen): Moving the issue forward requires someone to figure out a detailed plan
 * [needs implementer interest](https://github.com/search?q=org%3Awhatwg+label%3A%22needs+implementer+interest%22+is%3Aopen): Moving the issue forward requires implementers to express interest
