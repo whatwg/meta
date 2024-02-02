@@ -26,13 +26,16 @@ def lint_labels(labels):
             print("A label (" + label["name"] + ")'s w3c needs to be set to true if present.")
 
 def import_w3c_labels(labels_resource):
-    # Get W3C labels from their canonical URL
-    w3c_labels = fetch_json("https://w3c.github.io/hr-labels.json")
+    # Get W3C labels from their "canonical" URL
+    w3c_labels = fetch_json("https://w3c.github.io/common-labels.json")
 
     # Create a name index for the W3C labels
     w3c_label_index = {}
     i = 0
     for label in w3c_labels:
+        # W3C labels without "repo" are not relevant
+        if not "repo" in label:
+            continue
         w3c_label_index[label["name"]] = i
         i += 1
 
