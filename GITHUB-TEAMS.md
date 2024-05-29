@@ -20,7 +20,6 @@ At the time of writing, the following teams exist:
 - **forms** — Folks interested in taking forms further
 - **fs** — People who work on the File System standard
 - **html-parser** — The HTML Parser
-- **whatnot** — People attending the [WHATNOT meeting](https://github.com/whatwg/html/issues?q=is%3Aopen+%22Upcoming+WHATNOT%22)
 - **http** — HTTP-related matters
 - **i18n** — Internationalization-related matters
 - **loader** — The loader concept
@@ -32,3 +31,4 @@ At the time of writing, the following teams exist:
 - **sg** — Steering group
 - **storage** — Buckets! (And other storage matters.)
 - **triage** — Folks with the Triage permission for all WHATWG repositories
+- **whatnot** — People attending the [WHATNOT meeting](https://github.com/whatwg/html/issues?q=is%3Aopen+%22Upcoming+WHATNOT%22)
