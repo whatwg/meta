@@ -20,7 +20,7 @@ At the time of writing, the following teams exist:
 - **forms** — Folks interested in taking forms further
 - **fs** — People who work on the File System standard
 - **html-parser** — The HTML Parser
-- **html-triage** — People attending the [HTML triage meeting](https://github.com/whatwg/html/issues/6371)
+- **whatnot** — People attending the [WHATNOT meeting](https://github.com/whatwg/html/issues?q=is%3Aopen+%22Upcoming+WHATNOT%22)
 - **http** — HTTP-related matters
 - **i18n** — Internationalization-related matters
 - **loader** — The loader concept
