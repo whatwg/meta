@@ -135,8 +135,8 @@ def add_label(common_url, token, label):
 def adjust_repository_labels(organization, repository, token, labels_resource):
     common_url = "https://api.github.com/repos/%s/%s/labels" % (organization, repository)
 
-    # Delete default GitHub labels except for "good first issue"
-    for label_name in ("bug", "duplicate", "enhancement", "help wanted", "invalid", "question", "wontfix"):
+    # Delete default GitHub labels except for "good first issue" and "invalid"
+    for label_name in ("bug", "duplicate", "enhancement", "help wanted", "question", "wontfix"):
         delete_label(common_url, token, label_name)
 
     # Update and add labels

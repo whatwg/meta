@@ -23,11 +23,13 @@ These are labels used by all [WHATWG standards](https://spec.whatwg.org/):
 * [i18n-klreq](https://github.com/search?q=org%3Awhatwg+label%3A%22i18n-klreq%22+is%3Aopen): Notifies Korean script experts of relevant issues
 * [i18n-mlreq](https://github.com/search?q=org%3Awhatwg+label%3A%22i18n-mlreq%22+is%3Aopen): Notifies traditional Mongolian script experts of relevant issues
 * [impacts documentation](https://github.com/search?q=org%3Awhatwg+label%3A%22impacts+documentation%22): Used by documentation communities, such as MDN, to track changes that impact documentation
+* [integration](https://github.com/search?q=org%3Awhatwg+label%3A%22integration%22+is%3Aopen): Better coordination across standards needed
 * [interop](https://github.com/search?q=org%3Awhatwg+label%3A%22interop%22+is%3Aopen): Implementations are not interoperable with each other
 * [invalid](https://github.com/search?q=org%3Awhatwg+label%3A%22invalid%22+is%3Aopen): Used to mark off-topic or spam issues or PRs
-* [meta](https://github.com/search?q=org%3Awhatwg+label%3A%22meta%22+is%3Aopen): Changes to the ecosystem around the standard, not its contents.
+* [meta](https://github.com/search?q=org%3Awhatwg+label%3A%22meta%22+is%3Aopen): Changes to the ecosystem around the standard, not its contents
 * [needs concrete proposal](https://github.com/search?q=org%3Awhatwg+label%3A%22needs+concrete+proposal%22+is%3Aopen): Moving the issue forward requires someone to figure out a detailed plan
 * [needs implementer interest](https://github.com/search?q=org%3Awhatwg+label%3A%22needs+implementer+interest%22+is%3Aopen): Moving the issue forward requires implementers to express interest
+* [needs incubation](https://github.com/search?q=org%3Awhatwg+label%3A%22needs+incubation%22+is%3Aopen): Reach out to [WHATWG Chat](https://whatwg.org/chat) or [WICG](https://wicg.io/) for help
 * [needs tests](https://github.com/search?q=org%3Awhatwg+label%3A%22needs+tests%22+is%3Aopen): Moving the issue forward requires someone to write tests
 * [removal/deprecation](https://github.com/search?q=org%3Awhatwg+label%3A%22removal%2Fdeprecation%22+is%3Aopen): Removing or deprecating a feature
 * [security/privacy](https://github.com/search?q=org%3Awhatwg+label%3A%22security%2Fprivacy%22+is%3Aopen): There are security or privacy implications

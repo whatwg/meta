@@ -121,6 +121,11 @@
     "url_exclude_is_open": true
   },
   {
+    "color": "e0a967",
+    "description": "Better coordination across standards needed",
+    "name": "integration"
+  },
+  {
     "color": "c5def5",
     "description": "Implementations are not interoperable with each other",
     "name": "interop"
@@ -132,7 +137,7 @@
   },
   {
     "color": "fcabe1",
-    "description": "Changes to the ecosystem around the standard, not its contents.",
+    "description": "Changes to the ecosystem around the standard, not its contents",
     "name": "meta"
   },
   {
@@ -144,6 +149,11 @@
     "color": "5319e7",
     "description": "Moving the issue forward requires implementers to express interest",
     "name": "needs implementer interest"
+  },
+  {
+    "color": "2eb3c4",
+    "description": "Reach out to [WHATWG Chat](https://whatwg.org/chat) or [WICG](https://wicg.io/) for help",
+    "name": "needs incubation"
   },
   {
     "color": "b60205",
