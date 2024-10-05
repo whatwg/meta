@@ -8,7 +8,7 @@ def get_labels(labels_resource):
     return json.load(open(labels_resource, "r"))
 
 def remove_markdown_links(input):
-    return re.sub(r"\[(.+)\]\(.+\)", r"\1", input)
+    return re.sub(r"\[(.+?)\]\(.+?\)", r"\1", input)
 
 def lint_labels(labels):
     for label in labels:
