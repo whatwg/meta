@@ -11,7 +11,7 @@ These are labels used by all [WHATWG standards](https://spec.whatwg.org/):
 * [clarification](https://github.com/search?q=org%3Awhatwg+label%3A%22clarification%22+is%3Aopen): Standard could be clearer
 * [compat](https://github.com/search?q=org%3Awhatwg+label%3A%22compat%22+is%3Aopen): Standard is not web compatible or proprietary feature needs standardizing
 * [do not merge yet](https://github.com/search?q=org%3Awhatwg+label%3A%22do+not+merge+yet%22+is%3Aopen): Pull request must not be merged per rationale in comment
-* [editorial](https://github.com/search?q=org%3Awhatwg+label%3A%22editorial%22+is%3Aopen): Changes that do not affect how the standard is understood.
+* [editorial](https://github.com/search?q=org%3Awhatwg+label%3A%22editorial%22+is%3Aopen): Changes that do not affect how the standard is understood
 * [good first issue](https://github.com/search?q=org%3Awhatwg+label%3A%22good+first+issue%22+is%3Aopen): Ideal for someone new to a WHATWG standard or software project
 * [i18n-afrlreq](https://github.com/search?q=org%3Awhatwg+label%3A%22i18n-afrlreq%22+is%3Aopen): Notifies African languages experts of relevant issues
 * [i18n-alreq](https://github.com/search?q=org%3Awhatwg+label%3A%22i18n-alreq%22+is%3Aopen): Notifies Arabic script experts of relevant issues
