@@ -68,26 +68,25 @@ def replace_rd_pointer(shortname, contents, path_month):
 def add_date_to_rd(shortname, contents, today):
     if shortname != "html":
         metadata_date = today.strftime("%Y-%m-%d")
-        return re.sub(
+        return contents.replace(
             "Group: WHATWG",
-            f"Group: WHATWG\nStatus: RD\nDate: {metadata_date}",
-            contents
+            f"Group: WHATWG\nStatus: RD\nDate: {metadata_date}"
         )
 
     title_date = today.strftime("%B %Y")
-    pubdate = today.strftime("%d %B %Y")
-    with_title_date = re.sub(
+    contents = contents.replace(
         "<title w-nodev>HTML Standard</title>",
-        f"<title w-nodev>HTML Standard Review Draft {title_date}</title>",
-        contents
+        f"<title w-nodev>HTML Standard Review Draft {title_date}</title>"
     )
 
     # This intentionally removes the <span class="pubdate"> since otherwise Wattsi would put in the build date.
-    return re.sub(
-        "<h2 w-nohtml w-nosnap id=\"living-standard\" class=\"no-num no-toc\">Review Draft &mdash; Published <span class=\"pubdate\">\[DATE: 01 Jan 1901\]</span></h2>",
-        f"<h2 w-nohtml w-nosnap id=\"living-standard\" class=\"no-num no-toc\">Review Draft &mdash; Published {pubdate}</h2>",
-        with_title_date
+    pubdate = today.strftime("%d %B %Y")
+    contents = contents.replace(
+        '<p w-nohtml w-nosnap id="living-standard">Review Draft &mdash; Published <span class="pubdate">[DATE: 01 Jan 1901]</span></p>',
+        f'<p w-nohtml w-nosnap id="living-standard">Review Draft &mdash; Published {pubdate}</p>'
     )
+
+    return contents
 
 def create_pr(shortname, today):
     nice_month = today.strftime("%B %Y")
