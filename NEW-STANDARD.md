@@ -20,5 +20,9 @@ When adding a new WHATWG standard, here is a checklist that needs to be consider
    1. SG/admin: use https://github.com/whatwg/whattweetbot-keys to get the relevant keys.
 1. Add the standard to https://github.com/whatwg/sg/blob/main/db.json and ensure the relevant details are filled in. (In case a new Workstream is needed an issue will have to be filed with the SG first for review.)
 1. SG/admin: run https://github.com/whatwg/spec-factory.
+1. SG/admin: set up the participation check
+   1. Follow the steps [documented in the participate.whatwg.org repo](https://github.com/whatwg/participate.whatwg.org/blob/main/README.md#setting-up-the-github-webhook)
+   1. Use the DigitalOcean control panel to redeploy the participate app (so that it picks up the new `db.json`).
+   1. If you need to manually re-trigger any participation checks, use `https://github.com/whatwg/<spec-name>/settings/hooks` to redeliver the `pull_request.opened` hook.
 
 You should be all set. When in doubt reach out to the Steering Group.
