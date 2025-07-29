@@ -15,7 +15,6 @@ When adding a new WHATWG standard, here is a checklist that needs to be consider
       1. Add @whatbot to the repository with Role: Write so it can perform participant agreement checks.
       1. Add the @whatwg/triage team to the repository with Role: Triage.
       1. Add the @whatwg/editors-all-specs team to the repository with Role: Write.
-      1. Configure a [participate webhook](https://github.com/whatwg/participate.whatwg.org?tab=readme-ov-file#setting-up-the-github-webhook).
       1. Disable "Wikis", "Discussions", and "Allow merge commits". Enable "Automatically delete head branches".
 1. Create an SVG logo in the right shade of green (i.e., WHATWG green) and add it to https://github.com/whatwg/whatwg.org/tree/main/resources.whatwg.org.
 1. SG/admin: create a Twitter account.
