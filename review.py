@@ -151,11 +151,34 @@ def maybe_create_branch(shortname, today):
 
     return True
 
+def regenerate_rd(shortname, today):
+    print_header(f"Regenerating Review Draft for {shortname}")
+
+    path_month = today.strftime("%Y-%m")
+    input_file = "source" if shortname == "html" else glob.glob("*.bs")[0]
+
+    with open(input_file, "r", encoding="utf-8", newline="\n") as file:
+        contents = file.read()
+
+    review_draft_contents = add_date_to_rd(shortname, contents, today)
+
+    file_extension = "wattsi" if shortname == "html" else "bs"
+    review_draft_file = f"review-drafts/{path_month}.{file_extension}"
+    with open(review_draft_file, "w", encoding="utf-8", newline="\n") as file:
+        file.write(review_draft_contents)
+
+    subprocess.run(["git", "add", input_file], stdout=subprocess.DEVNULL, check=True)
+    subprocess.run(["git", "add", review_draft_file], stdout=subprocess.DEVNULL, check=True)
+    subprocess.run(["git", "commit", "--amend", "--no-edit"], stdout=subprocess.DEVNULL, check=True)
+
+    print(f"\nRegenerated Review Draft at {review_draft_file}")
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("shortnames", nargs="*", help="Optional spec shortnames to create. If omitted, will use this month's per db.json.")
     parser.add_argument("-f", "--force", action="store_true", help="bypass date checks")
     parser.add_argument("-p", "--pr", action="store_true", help="create pull requests in addition to branches")
+    parser.add_argument("--regenerate", action="store_true", help="regenerate the review draft without creating a new branch")
     args = parser.parse_args()
 
     today = datetime.datetime.today()
@@ -186,10 +209,13 @@ def main():
 
     for shortname in shortnames:
         os.chdir(f"../{shortname}")
-        branch_created = maybe_create_branch(shortname, today)
-        if (branch_created and args.pr):
-            create_pr(shortname, today)
-        os.chdir(".")
+        if args.regenerate:
+            regenerate_rd(shortname, today)
+        else:
+            branch_created = maybe_create_branch(shortname, today)
+            if (branch_created and args.pr):
+                create_pr(shortname, today)
+        os.chdir("..")
 
 if __name__ == "__main__":
     main()
