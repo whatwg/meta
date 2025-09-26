@@ -27,6 +27,11 @@
     "name": "agenda+"
   },
   {
+    "color": "000000",
+    "description": "To be discussed at a face-to-face meeting",
+    "name": "agenda+ f2f"
+  },
+  {
     "color": "ececec",
     "description": "Identifies issues opened by other standards organizations, as per WHATWG's [anchor permanence policy](https://whatwg.org/working-mode#anchors)",
     "name": "anchor permanence",
