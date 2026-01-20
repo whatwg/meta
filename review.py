@@ -181,6 +181,12 @@ def main():
     parser.add_argument("--regenerate", action="store_true", help="regenerate the review draft without creating a new branch")
     args = parser.parse_args()
 
+    if not os.path.basename(os.getcwd()) == "meta":
+        print("This script must be run from the meta directory.")
+        exit(1)
+
+    meta_directory = os.getcwd()
+
     today = datetime.datetime.today()
     ideal_publication_diff = days_from_third_monday(today)
 
@@ -208,14 +214,23 @@ def main():
         exit(1)
 
     for shortname in shortnames:
-        os.chdir(f"../{shortname}")
-        if args.regenerate:
-            regenerate_rd(shortname, today)
-        else:
-            branch_created = maybe_create_branch(shortname, today)
-            if (branch_created and args.pr):
-                create_pr(shortname, today)
-        os.chdir("..")
+        directory = os.path.join(os.path.dirname(meta_directory), shortname)
+        if not os.path.isdir(directory):
+            print(f"Directory for standard not found: {directory}.")
+            exit(1)
+
+    for shortname in shortnames:
+        directory = os.path.join(os.path.dirname(meta_directory), shortname)
+        try:
+            os.chdir(directory)
+            if args.regenerate:
+                regenerate_rd(shortname, today)
+            else:
+                branch_created = maybe_create_branch(shortname, today)
+                if (branch_created and args.pr):
+                    create_pr(shortname, today)
+        finally:
+            os.chdir(meta_directory)
 
 if __name__ == "__main__":
     main()
