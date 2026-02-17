@@ -181,7 +181,7 @@ def main():
     parser.add_argument("--regenerate", action="store_true", help="regenerate the review draft without creating a new branch")
     args = parser.parse_args()
 
-    if not os.path.basename(os.getcwd()) == "meta":
+    if os.path.basename(os.getcwd()) != "meta":
         print("This script must be run from the meta directory.")
         exit(1)
 
