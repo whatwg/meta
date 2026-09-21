@@ -14,6 +14,10 @@ If this is your first time contributing to the WHATWG standards, check out the g
 
 Contributions to older issues are always appreciated. If an issue hasn't been updated in a while, you should ask if the issue is still relevant before working on it. If someone else was previously working on an issue, and you want to work on it, it's polite to ask that person if you can work on the issue before taking it.
 
+## Use of AI
+
+If you use AI tools to contribute, please follow the [AI Policy](https://whatwg.org/ai-policy). In particular, you are responsible for reviewing everything you submit and are expected to be able to answer any questions reviewers have about it.
+
 ## Committing
 
 See [COMMITTING.md](COMMITTING.md) for further details.
